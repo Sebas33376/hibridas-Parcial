@@ -1,24 +1,21 @@
 import { useEffect, useState } from "react";
-import Layout from "../../components/Layout";
 import List from "../../components/teamsList";
+import { getTeams } from "../../services/teams.service";
 
 export default function TeamsPage() {
 
     const [teams, setTeams] = useState([])
 
 useEffect(() => {
-    fetch("http://localhost:2023/api/teams")
-    .then(async data => {
-      const teams = await data.json()
-      setTeams(teams)
-    })
+  getTeams()
+    .then(data => setTeams(data))
 },[])
 
 useEffect(()=>{},[teams])
 
   return (
-    <Layout url="/">
+    <div>
       <List teamsList={teams}/>
-    </Layout>
+    </div>
   );
 }

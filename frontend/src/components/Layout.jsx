@@ -1,12 +1,15 @@
-import { Link } from "react-router-dom";
+import { SessionProvider } from "../context/SessionContext.jsx";
+import NavBar from "./NavBar.jsx";
 
-// eslint-disable-next-line react/prop-types
-const Layout = ({ children, url , ...rest }) => {
-  return <div {...rest}>
-    <div>
-        <Link to={url}>atras</Link>
-    </div>
-    {children}</div>;
+const Layout = ({ children, ...rest }) => {
+  return (
+    <SessionProvider>
+      <div {...rest}>
+        <NavBar/>
+        {children}
+      </div>
+    </SessionProvider>
+  );
 };
 
 export default Layout;

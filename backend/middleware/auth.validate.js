@@ -7,7 +7,7 @@ return schema.account.validate(req.body,{abortEarly: false, stripUnknown: true})
     res.body = account
     next()
 })
-.catch(err => res.status(400).json({err}))
+.catch(err => res.status(400).json({error: {message: err.message}}))
 }
 
 export {

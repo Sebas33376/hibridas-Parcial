@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+import { useProfile } from "../context/SessionContext";
+
 const HomePage = () => {
+  const profile = useProfile();
   return (
     <>
-      <h1>Hola Nombre de Usuario!</h1>
+      <h1>Hola {profile?.userName}!</h1>
       <p>¿Qué deporte quieres hacer hoy?</p>
       <div>
         <h2>Organizá tu partido</h2>
@@ -12,16 +16,16 @@ const HomePage = () => {
       </div>
       <ul>
         <li>
-          <a href="">Organizar</a>
+          <Link to="">Organizar</Link>
         </li>
         <li>
-          <a href="">Categorias</a>
+          <Link to="/teams">Buscar Equipos</Link>
         </li>
         <li>
-          <a href="">Mis Equipos</a>
+          <Link to="">Mis Equipos</Link>
         </li>
         <li>
-          <a href="">Equipos Creados</a>
+          <Link to="">Equipos Creados</Link>
         </li>
       </ul>
     </>
