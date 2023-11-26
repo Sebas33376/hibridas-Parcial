@@ -1,5 +1,6 @@
 import { call } from "./http.service";
 
+
 function login({ userName, password }) {
   return call({
     uri: "auth/login",
@@ -15,5 +16,6 @@ function logOut() {
 function getProfile() {
   return call({ uri: "profile", method: "GET" });
 }
+
 
 export { login, logOut, getProfile };
