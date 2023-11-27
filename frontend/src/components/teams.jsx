@@ -24,4 +24,4 @@ Teams.protoTypes = {
   teams: PropTypes.object.isRequired
 }
 
-export default Teams;
+export default Teams

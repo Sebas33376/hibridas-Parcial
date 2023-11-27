@@ -25,35 +25,41 @@ const LoginPage = () => {
         localStorage.setItem("token", token);
         navigate("/", { replace: true });
       })
-      .catch((err) => setError(err.error.message));
+      .catch((err) => setError(err.error));
   },[userName, password, navigate, setError])
 
   return (
-    <div>
+    <div className="container mx-auto px-4">
       <form onSubmit={onSubmit}>
-        <h1>Iniciar sesión</h1>
-        <label>Nombre de usuario</label>
+        <h1 className="text-3xl my-5 font-bold">Bienvenido de vuelta!</h1>
+        <p className="mb-3">Ingresa tu email y tu contrasena para empezar</p>
+        <div className="space-y-3">
         <input
+          className="w-full border border-input-dark bg-input py-1 px-3 rounded-lg "
           type="text"
           name="userName"
           id="userName"
+          placeholder="Nombre de usuario"
           onChange={onCahngeUserName}
           value={userName}
         />
-        <label>Contraseña</label>
         <input
+          className="w-full border border-input-dark bg-input py-1 px-3 rounded-lg"
           type="password"
           name="password"
           id="password"
+          placeholder="Password"
           onChange={onCahngePassword}
           value={password}
         />
+        </div>
         <p>{error}</p>
-        <input type="submit" value="Iniciar sesión" />
+        <button type="submit" className="mt-3 bg-red-500 py-1 px-3 rounded-lg">Iniciar sesión</button>
       </form>
-      <ImageUpload/>
     </div>
   );
 };
 
 export default LoginPage;
+
+
