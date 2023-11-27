@@ -3,15 +3,17 @@ import { useProfile } from "../context/SessionContext";
 
 const HomePage = () => {
   const profile = useProfile();
-  console.log(profile)
+  console.log(profile);
   return (
     <div>
-      <div className="my-10 container mx-auto px-4"> 
-        <h1 className="text-2xl">Hola <span className="font-bold">{profile?.userName}!</span></h1>
-      <p className="py-5">¿Qué deporte quieres hacer hoy?</p>
+      <div className="my-10 container mx-auto px-4">
+        <h1 className="text-2xl">
+          Hola <span className="font-bold">{profile?.userName}!</span>
+        </h1>
+        <p className="py-2">¿Qué deporte querés hacer hoy?</p>
       </div>
-     
-      <div className="bg-gray-900 px-4 text-white py-8 space-y-4">
+
+      <div className="bg-main-dark px-4 text-white py-5 space-y-4">
         <h2 className="text-2xl font-bold">Organizá tu partido</h2>
         <p className="">
           Creá partidos del deporte que más te guste! Elige el lugar, la fecha y
@@ -19,17 +21,17 @@ const HomePage = () => {
         </p>
       </div>
       <ul className="container mx-auto grid grid-cols-2 px-4 gap-3 my-10">
-        <li className="bg-blue-500 py-16 text-center rounded-xl">
+        <li className="bg-main-color2 py-12 text-center rounded-xl">
           <Link to="">Organizar</Link>
         </li>
-        <li className="bg-green-500 py-16 text-center rounded-xl">
+        <li className="bg-main-color1 py-12 text-center rounded-xl">
           <Link to="/teams">Buscar Equipos</Link>
         </li>
-        <li className="bg-green-500 py-16 text-center rounded-xl">
+        <li className="bg-main-color1 py-12 text-center rounded-xl">
           <Link to="">Mis Equipos</Link>
         </li>
-        <li className="bg-blue-500 py-16 text-center rounded-xl">
-          <Link to="">Equipos Creados</Link>
+        <li className="bg-main-color2 py-12 text-center rounded-xl">
+          <Link to="">Historial</Link>
         </li>
       </ul>
     </div>
