@@ -27,15 +27,15 @@ export default function TeamsPage() {
         </span>
       </div>
       <div className="mx-4">
-      <input
-            type="text"
-            placeholder="Buscar"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-5 py-1 border rounded-lg my-1"
-          />
+        <input
+          type="text"
+          placeholder="Buscar"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full px-5 py-1 border rounded-lg my-1"
+        />
       </div>
-      
+
       <List teamsList={filteredTeams} />
     </div>
   );

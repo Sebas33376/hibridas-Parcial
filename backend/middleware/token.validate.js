@@ -5,13 +5,13 @@ async function validateToken(req, res, next) {
     console.log(token);
 
     if (!token) {
-        return res.status(401).json({error:{message:"token no enviado"}});
+        return res.status(401).json({ error: { message: "token no enviado" } });
     }
 
     const account = await service.validateToken(token)
 
     if (!account) {
-        return res.status(401).json({error:{message:"token no autorizado"}});
+        return res.status(401).json({ error: { message: "token no autorizado" } });
     }
 
     req.account = account;

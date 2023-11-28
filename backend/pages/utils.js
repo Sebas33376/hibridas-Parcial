@@ -1,7 +1,7 @@
 function createPageProyects(title, content) {
-    let html = "";
+  let html = "";
 
-    html += `<!DOCTYPE html>
+  html += `<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
@@ -19,8 +19,8 @@ function createPageProyects(title, content) {
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
           crossorigin="anonymous"
         ></script>`;
-    html += "<title>" + title + "</title></head><body>";
-    html += `<nav class="navbar navbar-expand-lg bg-primary">
+  html += "<title>" + title + "</title></head><body>";
+  html += `<nav class="navbar navbar-expand-lg bg-primary">
     <div class=" container-fluid">
     <a class="navbar-brand text-primary bg-light px-3 fs-4 rounded" href="/">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,19 +37,19 @@ function createPageProyects(title, content) {
     </div>
     </div>
     </nav>`;
-    html += "<h1 class='text-center text-primary m-5'>" + title + "</h1>";
-    html += content;
-    html += `<footer class="bg-primary p-5 mt-5"> 
+  html += "<h1 class='text-center text-primary m-5'>" + title + "</h1>";
+  html += content;
+  html += `<footer class="bg-primary p-5 mt-5"> 
     <p class="text-center text-light"> AH20232CP1 made by Tomas Friz, Sebastián Daniel Loria y Josefina Nocelli
      </p></footer></body > </html >`;
 
-    return html;
+  return html;
 }
 
 function createPageClients(title, content) {
-    let html = "";
+  let html = "";
 
-    html += `<!DOCTYPE html>
+  html += `<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
@@ -67,8 +67,8 @@ function createPageClients(title, content) {
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
           crossorigin="anonymous"
         ></script>`;
-    html += "<title>" + title + "</title></head><body>";
-    html += `<nav class="navbar navbar-expand-lg bg-primary">
+  html += "<title>" + title + "</title></head><body>";
+  html += `<nav class="navbar navbar-expand-lg bg-primary">
     <div class=" container-fluid">
     <a class="navbar-brand text-primary bg-light px-3 fs-4 rounded" href="/">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,16 +80,16 @@ function createPageClients(title, content) {
     </div>
     </div>
     </nav>`;
-    html += "<h1 class='text-center text-primary m-5'>" + title + "</h1>";
-    html += content;
-    html += `<footer class="bg-primary p-5 mt-5"> 
+  html += "<h1 class='text-center text-primary m-5'>" + title + "</h1>";
+  html += content;
+  html += `<footer class="bg-primary p-5 mt-5"> 
     <p class="text-center text-light"> AH20232CP1 made by Tomas Friz, Sebastián Daniel Loria y Josefina Nocelli
      </p></footer></body > </html >`;
 
-    return html;
+  return html;
 }
 
 export {
-    createPageProyects,
-    createPageClients
+  createPageProyects,
+  createPageClients
 }

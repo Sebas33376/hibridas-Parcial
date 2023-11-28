@@ -18,10 +18,10 @@ const Teams = ({ teams }) => {
         <div>
           <h2 className="font-bold">{name}</h2>
           <p className="flex items-center">
-          <span className="mr-2">
-            <IconUbicationDark />
-          </span>
-          {place}</p>
+            <span className="mr-2">
+              <IconUbicationDark />
+            </span>
+            {place}</p>
           <div className="flex items-center mt-3">
             <div className="flex">
               <p className="mr-2 bg-main-color2 text-sm text-white rounded-md p-1">

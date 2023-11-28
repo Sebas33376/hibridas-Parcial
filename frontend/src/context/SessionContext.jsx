@@ -20,7 +20,7 @@ function useProfile() {
   return profile;
 }
 
-function SessionProvider({children}) {
+function SessionProvider({ children }) {
   const [profile, setProfile] = useState({});
   const navigate = useNavigate();
 
@@ -35,12 +35,12 @@ function SessionProvider({children}) {
   }, []);
 
   const value = useMemo(() => {
-    return {profile, onLogOut}
-  },[profile, onLogOut])
+    return { profile, onLogOut }
+  }, [profile, onLogOut])
 
   return (
     <SessionContext.Provider value={value}>
-        {children}
+      {children}
     </SessionContext.Provider>
   );
 }

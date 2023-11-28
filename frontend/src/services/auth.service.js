@@ -8,7 +8,7 @@ function login({ userName, password }) {
   });
 }
 
-function register ({ userName, password, email }) {
+function register({ userName, password, email }) {
   return call({
     uri: "auth",
     method: "POST",

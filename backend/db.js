@@ -5,10 +5,10 @@ const client = new MongoClient("mongodb+srv://Sebas33376:Loria43314475@parciales
 const db = client.db("AH20232CP1")
 
 client.connect()
-.then( async() => {
-    console.log("Conectado");
-})
-.catch((err) => {
-    console.log("No se pudo conectar");
-    console.log(err);
-})
+    .then(async () => {
+        console.log("Conectado");
+    })
+    .catch((err) => {
+        console.log("No se pudo conectar");
+        console.log(err);
+    })
