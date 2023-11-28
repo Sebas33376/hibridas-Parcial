@@ -38,6 +38,10 @@ const routes = createBrowserRouter([
         path: "teams/:id",
         element: <TeamsDetails />,
       },
+      {
+        path: "history",
+        element: <historyPage />,
+      },
     ],
   },
   {

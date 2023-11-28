@@ -8,16 +8,16 @@ const HomePage = () => {
     <div>
       <div className="my-10 container mx-auto px-4">
         <h1 className="text-2xl">
-          Hola <span className="font-bold">{profile?.userName}!</span>
+          ¡Hola <span className="font-bold">{profile?.userName}!</span>
         </h1>
         <p className="py-2">¿Qué deporte querés hacer hoy?</p>
       </div>
 
       <div className="bg-main-dark px-4 text-white py-5 space-y-4">
-        <h2 className="text-2xl font-bold">Organizá tu partido</h2>
+        <h2 className="text-2xl font-bold">¡Organizá tu partido¡</h2>
         <p className="">
-          Creá partidos del deporte que más te guste! Elige el lugar, la fecha y
-          la hora. Anímate a ser el director de tus propios eventos deportivos!
+          ¡Creá partidos del deporte que más te guste! ¡Elige el lugar, la fecha y
+          la hora! ¡Anímate a ser el director de tus propios eventos deportivos!
         </p>
       </div>
       <ul className="container mx-auto grid grid-cols-2 px-4 gap-3 my-10">
@@ -31,7 +31,7 @@ const HomePage = () => {
           <Link to="">Mis Equipos</Link>
         </li>
         <li className="bg-main-color2 py-12 text-center rounded-xl">
-          <Link to="">Historial</Link>
+          <Link to="/history">Historial</Link>
         </li>
       </ul>
     </div>
