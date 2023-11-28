@@ -11,7 +11,7 @@ const teamSchema = yup.object({
     description: yup.string().required(),
     skills_level: yup.string().required(),
     gender: yup.string().required(),
-    organizer_id: yup.string(),
+    organizer_id: yup.string().required(),
 });
 
 const teamSchemaPatch = yup.object({

@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../services/auth.service";
-import ImageUpload from "../../components/image.upload";
 
 const LoginPage = () => {
   const navigate = useNavigate();

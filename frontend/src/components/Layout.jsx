@@ -1,11 +1,11 @@
 import { SessionProvider } from "../context/SessionContext.jsx";
 import NavBar from "./NavBar.jsx";
 
-const Layout = ({ children, ...rest }) => {
+const Layout = ({ children, url , ...rest }) => {
   return (
     <SessionProvider>
       <div {...rest}>
-        <NavBar />
+        <NavBar url={url}/>
         {children}
       </div>
     </SessionProvider>

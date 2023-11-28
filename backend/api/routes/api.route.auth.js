@@ -1,5 +1,5 @@
 import { Router } from "express";
-import * as controllers from "../controllers/controller.api.auth.js";
+import * as controllers from "../controllers/api.controller.auth.js";
 import { validateAccount } from "../../middleware/auth.validate.js";
 import { validateToken } from "../../middleware/token.validate.js";
 import { validateProfile } from "../../middleware/login.validate.js";

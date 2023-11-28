@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import React from "react";
 import { useSession } from "../context/SessionContext";
 import { useProfile } from "../context/SessionContext";
 import IconHome from "../icons/IconHome/";
