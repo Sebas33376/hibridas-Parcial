@@ -22,8 +22,8 @@ const addProyectForm = (req, res) => {
 }
 
 const addProyect = (req, res) => {
-    
-   let technologies = req.body.technologies.split(',');
+
+    let technologies = req.body.technologies.split(',');
 
 
     const proyect = {
@@ -37,8 +37,8 @@ const addProyect = (req, res) => {
     }
 
     service.createProyect(proyect)
-        .then(() => res.send(utils.createPageProyects(`${proyect.name}/ID:${proyect._id}`, 
-        `<p class="text-success text-center">El proyecto se creo con exito</p>`)))
+        .then(() => res.send(utils.createPageProyects(`${proyect.name}/ID:${proyect._id}`,
+            `<p class="text-success text-center">El proyecto se creo con exito</p>`)))
         .catch(err => res.send(views.createError("404")))
 }
 
@@ -93,9 +93,9 @@ const editProyect = (req, res) => {
     }
 
     service.editProyect(id, proyect)
-    .then(proyect => res.send(utils.createPageProyects(`ID:${id}`, 
-    `<p class="text-success text-center">El proyecto se edito con exito</p>`)))
-    .catch(err => res.send(views.createError("404")))
+        .then(proyect => res.send(utils.createPageProyects(`ID:${id}`,
+            `<p class="text-success text-center">El proyecto se edito con exito</p>`)))
+        .catch(err => res.send(views.createError("404")))
 }
 
 const deletProyectForm = (req, res) => {
@@ -107,9 +107,9 @@ const deletProyectForm = (req, res) => {
 const deletProyect = (req, res) => {
     const id = req.params.id;
     service.deletProyect(id)
-    .then(proyect => res.send(utils.createPageProyects(`ID:${id}`, 
-    `<p class="text-success text-center">El proyecto se elimino con exito</p>`)))
-    .catch(err => res.send(views.createError("404")))
+        .then(proyect => res.send(utils.createPageProyects(`ID:${id}`,
+            `<p class="text-success text-center">El proyecto se elimino con exito</p>`)))
+        .catch(err => res.send(views.createError("404")))
 
 }
 

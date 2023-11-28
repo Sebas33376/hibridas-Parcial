@@ -7,7 +7,10 @@ import TeamsPage from "./pages/teams/teamsPage";
 import HomePage from "./pages/homePage";
 import TeamsDetails from "./pages/teams/teamsDetailes";
 import LoginPage from "./pages/login/loginPage";
+import ProfilePage from "./pages/profile/profilePage";
 import PrivateRoute from "./components/privateRoute";
+import AuthSelecction from "./pages/authSelecction/AuthSelecction";
+import RegisterPage from "./pages/register/RegisterPage";
 
 const routes = createBrowserRouter([
   {
@@ -28,10 +31,34 @@ const routes = createBrowserRouter([
         element: <Suspense fallback={<div>Cargando...</div>}><TeamsPage /></Suspense>,
       },
       {
+        path: "profile",
+        element: <ProfilePage />,
+      },
+      {
         path: "teams/:id",
         element: <TeamsDetails />,
       },
+      {
+        path: "history",
+        element: <historyPage />,
+      },
+      {
+        path: "myTeams",
+        element: <myTeamsPage />,
+      },
+      {
+        path: "organize",
+        element: <organizePage />,
+      },
     ],
+  },
+  {
+    path: "/selection",
+    element: <AuthSelecction />,
+  },
+  {
+    path: "/register",
+    element: <RegisterPage />,
   },
   {
     path: "/login",

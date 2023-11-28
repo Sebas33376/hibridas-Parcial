@@ -3,32 +3,38 @@ import { useProfile } from "../context/SessionContext";
 
 const HomePage = () => {
   const profile = useProfile();
+  console.log(profile);
   return (
-    <>
-      <h1>Hola {profile?.userName}!</h1>
-      <p>¿Qué deporte quieres hacer hoy?</p>
-      <div>
-        <h2>Organizá tu partido</h2>
-        <p>
-          Creá partidos del deporte que más te guste! Elige el lugar, la fecha y
-          la hora. Anímate a ser el director de tus propios eventos deportivos!
+    <div>
+      <div className="my-10 container mx-auto px-4">
+        <h1 className="text-2xl">
+          ¡Hola <span className="font-bold">{profile?.userName}</span>!
+        </h1>
+        <p className="py-2">¿Qué deporte querés hacer hoy?</p>
+      </div>
+
+      <div className="bg-main-dark px-3 text-white py-3 space-y-3">
+        <h2 className="text-2xl font-bold">¡Organizá tu partido!</h2>
+        <p className="">
+          ¡Creá partidos del deporte que más te guste! ¡Elige el lugar, la fecha y
+          la hora! ¡Anímate a ser el director de tus propios eventos deportivos!
         </p>
       </div>
-      <ul>
-        <li>
-          <Link to="">Organizar</Link>
+      <ul className="container mx-auto grid grid-cols-2 px-4 gap-3 my-10">
+        <li className="bg-main-color2 py-12 text-center rounded-xl">
+          <Link to="/organize">Organizar</Link>
         </li>
-        <li>
+        <li className="bg-main-color1 py-12 text-center rounded-xl">
           <Link to="/teams">Buscar Equipos</Link>
         </li>
-        <li>
-          <Link to="">Mis Equipos</Link>
+        <li className="bg-main-color1 py-12 text-center rounded-xl">
+          <Link to="/myTeams">Mis Equipos</Link>
         </li>
-        <li>
-          <Link to="">Equipos Creados</Link>
+        <li className="bg-main-color2 py-12 text-center rounded-xl">
+          <Link to="/history">Historial</Link>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

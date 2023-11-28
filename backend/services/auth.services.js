@@ -18,7 +18,7 @@ async function addAccount(account) {
         throw new Error("La cuenta ya existe")
     }
 
-    const newAccount = {...account}
+    const newAccount = { ...account }
 
     newAccount.password = await bcrypt.hash(account.password, 10)
 

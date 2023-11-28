@@ -5,7 +5,7 @@ const Layout = ({ children, ...rest }) => {
   return (
     <SessionProvider>
       <div {...rest}>
-        <NavBar/>
+        <NavBar />
         {children}
       </div>
     </SessionProvider>

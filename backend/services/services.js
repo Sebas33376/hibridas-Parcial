@@ -4,7 +4,7 @@ const client = new MongoClient("mongodb+srv://Sebas33376:Loria43314475@parciales
 
 const db = client.db("AH20232CP1")
 
-const colectionTeam =  db.collection("teams");
+const colectionTeam = db.collection("teams");
 
 async function getTeams(filters) {
 
