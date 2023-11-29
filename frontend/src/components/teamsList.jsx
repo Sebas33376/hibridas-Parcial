@@ -1,9 +1,6 @@
 import Teams from "./teams.jsx";
 
-
 const List = ({ teamsList }) => {
-
-
   return (
     <>
       <ul>
