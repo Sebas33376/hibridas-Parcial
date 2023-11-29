@@ -36,4 +36,14 @@ async function getProfile(id) {
   return profile;
 }
 
-export { addProfile, getProfile };
+async function editProfile(id) {
+  await client.connect();
+
+  const profile = await profileCollection.findOne({ _id: new ObjectId(id) });
+  if (!profile) {
+    throw new Error("El perfil no existe");
+  }
+  return profile;
+}
+
+export { addProfile, getProfile, editProfile };

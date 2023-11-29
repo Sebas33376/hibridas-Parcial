@@ -4,7 +4,7 @@ import { PropTypes } from "prop-types";
 import IconUbicationDark from "../icons/IconUbicationDark";
 
 const Teams = ({ teams }) => {
-  const { _id, name, joined, place, skills_level, gender, img } = teams;
+  const { _id, name, joined, max, place, skills_level, gender, img } = teams;
 
   return (
     <li className="flex items-center justify-between p-5 border-gray-300 rounded-md my-4 mx-2 shadow-md">
@@ -25,7 +25,7 @@ const Teams = ({ teams }) => {
           <div className="flex items-center mt-3">
             <div className="flex">
               <p className="mr-2 bg-main-color2 text-sm text-white rounded-md p-1">
-                {joined[0]}/{joined[1]}
+                {joined.length}/{max} 
               </p>
               <p className="mr-2 bg-main-color2 text-sm text-white rounded-md p-1">
                 {skills_level}

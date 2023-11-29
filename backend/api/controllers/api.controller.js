@@ -52,6 +52,7 @@ const replaceTeam = (req, res) => {
 
 const editTeam = (req, res) => {
     const id = req.params.id;
+    const team = req.body;
 
     service.editTeam(id, team)
         .then(newTeam => {

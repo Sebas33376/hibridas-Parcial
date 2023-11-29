@@ -1,5 +1,4 @@
 import Teams from "./teams.jsx";
-import { useState } from "react";
 
 
 const List = ({ teamsList }) => {

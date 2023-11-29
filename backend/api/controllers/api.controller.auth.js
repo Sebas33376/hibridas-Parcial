@@ -43,4 +43,13 @@ const getProfile = async (req, res) => {
     );
 };
 
-export { addAccount, login, logOut, addProfile, getProfile };
+const editProfile = async (req, res) => {
+  return profileService
+    .editProfile(req.account._id)
+    .then((profile) => res.status(201).json(profile))
+    .catch((err) =>
+      res.status(401).json({ message: { message: err.message } })
+    );
+};
+
+export { addAccount, login, logOut, addProfile, getProfile, editProfile };

@@ -27,7 +27,7 @@ const TeamsDetails = () => {
         </p>
         <ul className="flex mt-4 absolute bottom-4 text-white z-10 right-1">
           <li className="bg-main-color2 py-2 px-3 rounded-full mx-1">
-            Cantidad
+          {team.joined.length}/{team.max}
           </li>
           <li className="bg-main-color2 py-2 px-3 rounded-full mx-1">
             {team.gender}

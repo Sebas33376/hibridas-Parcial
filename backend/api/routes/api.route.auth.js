@@ -12,8 +12,9 @@ route.post("/auth/login", [validateAccount], controllers.login);
 
 route.delete("/auth", [validateAccount], controllers.logOut);
 
-route.post("/profile", [validateToken, validateProfile], controllers.addProfile);
-
 route.get("/profile", [validateToken], controllers.getProfile);
+route.post("/profile", [validateToken, validateProfile], controllers.addProfile);
+route.patch("/profile", [validateToken], controllers.editProfile);
+
 
 export default route;
