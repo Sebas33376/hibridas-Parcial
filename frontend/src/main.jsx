@@ -13,6 +13,7 @@ import AuthSelecction from "./pages/authSelecction/AuthSelecction";
 import RegisterPage from "./pages/register/RegisterPage";
 import MyTeamsPage from "./pages/myTeams/myTeamsPage";
 import OrganizePage from "./pages/organize/organizePage";
+import HistoryPage from "./pages/history/historyPage";
 
 const routes = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "history",
-        element: <historyPage />,
+        element: <HistoryPage />,
       },
       {
         path: "myTeams",

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+
 import IconFilter from "../../icons/IconFilter";
 
-const historyPage = () => {
+const HistoryPage = () => {
     return (
         <div>
             <div className="flex justify-between items-center mt-6">
@@ -14,4 +14,4 @@ const historyPage = () => {
     )
 }
 
-export default historyPage;
+export default HistoryPage;

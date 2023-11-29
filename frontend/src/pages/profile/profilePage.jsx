@@ -1,7 +1,6 @@
-import React from "react";
 import { useProfile, useSession } from "../../context/SessionContext";
 import { useEffect, useState } from "react";
-import IconPencil from "../../icons/IconPencil";
+
 
 export default function ProfilePage() {
   const profile = useProfile();
