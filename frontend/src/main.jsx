@@ -11,6 +11,8 @@ import ProfilePage from "./pages/profile/profilePage";
 import PrivateRoute from "./components/privateRoute";
 import AuthSelecction from "./pages/authSelecction/AuthSelecction";
 import RegisterPage from "./pages/register/RegisterPage";
+import MyTeamsPage from "./pages/myTeams/myTeamsPage";
+import OrganizePage from "./pages/organize/organizePage";
 
 const routes = createBrowserRouter([
   {
@@ -44,11 +46,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "myTeams",
-        element: <myTeamsPage />,
+        element: <MyTeamsPage />,
       },
       {
         path: "organize",
-        element: <organizePage />,
+        element: <OrganizePage />,
       },
     ],
   },

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import IconFilter from "../../icons/IconFilter";
 
-const organizePage = () => {
+const OrganizePage = () => {
     return (
         <div>
             <div className="flex justify-between items-center mt-6">
@@ -14,4 +14,4 @@ const organizePage = () => {
     )
 }
 
-export default organizePage;
+export default OrganizePage;
