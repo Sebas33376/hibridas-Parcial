@@ -3,7 +3,7 @@ import { useProfile } from "../context/SessionContext";
 
 const HomePage = () => {
   const profile = useProfile();
-  console.log(profile);
+
   return (
     <div>
       <div className="my-10 container mx-auto px-4">

@@ -4,7 +4,8 @@ const teamSchema = yup.object({
     name: yup.string().required(),
     img: yup.string().required(),
     sport: yup.string().required(),
-    joins: yup.array().of(yup.number().required()),
+    joined: yup.array().of(yup.string()).required(),
+    max:yup.string().required(),
     place: yup.string().required(),
     date: yup.string().required(),
     hour: yup.string().required(),
@@ -12,6 +13,7 @@ const teamSchema = yup.object({
     skills_level: yup.string().required(),
     gender: yup.string().required(),
     organizer_id: yup.string().required(),
+    direction: yup.string().required(),
 });
 
 const teamSchemaPatch = yup.object({

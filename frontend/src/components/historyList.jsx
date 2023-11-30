@@ -5,7 +5,7 @@ const List = ({ historyList }) => {
         <>
             <ul>
                 {historyList.map((history) => (
-                    <History key={teams._id} teams={teams} />
+                    <History key={history._id} history={history} />
                 ))}
             </ul>
         </>

@@ -37,7 +37,7 @@ export default function HistoryPage() {
                 />
             </div>
 
-            <List teamsList={filteredTeams} />
+            <List historyList={filteredTeams} />
         </div>
     );
 }

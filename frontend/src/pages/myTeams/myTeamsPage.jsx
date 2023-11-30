@@ -4,8 +4,6 @@ import { getTeams } from "../../services/teams.service";
 import IconFilter from "../../icons/IconFilter";
 import "./myTeamsPage.css";
 
-const normalizeString = (str) =>
-    str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
 export default function MyTeamsPage() {
     const [teams, setTeams] = useState([]);
@@ -16,9 +14,9 @@ export default function MyTeamsPage() {
     }, []);
 
     const filteredTeams = teams.filter((team) =>
-        normalizeString(team.name).includes(normalizeString(searchTerm))
+        team.name.includes(searchTerm)
     );
-
+console.log(filteredTeams);
     return (
         <div>
             <div className="flex justify-between items-center mt-6">

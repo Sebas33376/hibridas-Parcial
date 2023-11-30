@@ -1,7 +1,4 @@
 import * as service from "../../services/services.js"
-import yup from "yup";
-import { object } from 'yup';
-
 
 const getTeams = (req, res) => {
 
@@ -76,11 +73,25 @@ const deletTeam = (req, res) => {
 
 }
 
+const getMyTeams = (req, res) => {
+    const id = req.params.id;
+
+    service.getMyTeams(id)
+        .then(myTeams => {
+            if (myTeams) {
+                res.status(200).json(myTeams);
+            } else {
+                res.status(404).json();
+            }
+        })
+}
+
 export {
     getTeams,
     getTeamById,
     addTeam,
     editTeam,
     replaceTeam,
-    deletTeam
+    deletTeam,
+    getMyTeams
 }

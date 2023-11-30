@@ -25,4 +25,5 @@ function getProfile() {
   return call({ uri: "profile", method: "GET" });
 }
 
+
 export { login, logOut, getProfile, register };

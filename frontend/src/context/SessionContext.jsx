@@ -20,6 +20,11 @@ function useProfile() {
   return profile;
 }
 
+function useUser() {
+  const { user } = useSession();
+  return user;
+}
+
 function SessionProvider({ children }) {
   const [profile, setProfile] = useState({});
   const navigate = useNavigate();
@@ -45,4 +50,4 @@ function SessionProvider({ children }) {
   );
 }
 
-export { SessionContext, useSession, useProfile, SessionProvider };
+export { SessionContext, useSession, useProfile, useUser, SessionProvider };

@@ -41,11 +41,16 @@ async function deletTeam(id) {
     return deleted;
 }
 
+async function getMyTeams(id) {
+    return colectionTeam.findOne({ organizer_id: new ObjectId(id), joined: new ObjectId(id)});
+}
+
 export {
     getTeams,
     getTeamById,
     createTeam,
     replaceTeam,
     editTeam,
-    deletTeam
+    deletTeam,
+    getMyTeams
 }
