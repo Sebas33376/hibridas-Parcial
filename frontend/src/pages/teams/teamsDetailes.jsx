@@ -70,7 +70,7 @@ const TeamsDetails = () => {
     </>
   ) : (
     <div>
-      <h1>Cargando</h1>
+      <h1>Cargando...</h1>
     </div>
   );
 };

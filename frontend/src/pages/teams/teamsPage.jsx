@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import List from "../../components/teamsList";
 import { getTeams } from "../../services/teams.service";
 import IconFilter from "../../icons/IconFilter";
+import "./teamsPage.css";
 
 const normalizeString = (str) =>
   str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();

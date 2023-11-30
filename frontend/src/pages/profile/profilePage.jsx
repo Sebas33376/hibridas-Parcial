@@ -1,5 +1,6 @@
 import { useProfile, useSession } from "../../context/SessionContext";
 import { useEffect, useState } from "react";
+import "./profilePage.css";
 
 
 export default function ProfilePage() {

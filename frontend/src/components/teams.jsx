@@ -25,7 +25,7 @@ const Teams = ({ teams }) => {
           <div className="flex items-center mt-3">
             <div className="flex">
               <p className="mr-2 bg-main-color2 text-sm text-white rounded-md p-1">
-                {joined.length}/{max} 
+                {joined.length}/{max}
               </p>
               <p className="mr-2 bg-main-color2 text-sm text-white rounded-md p-1">
                 {skills_level}

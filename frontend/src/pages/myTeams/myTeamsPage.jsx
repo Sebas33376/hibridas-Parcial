@@ -1,6 +1,24 @@
+import { useEffect, useState } from "react";
+import List from "../../components/myTeamsList";
+import { getTeams } from "../../services/teams.service";
 import IconFilter from "../../icons/IconFilter";
+import "./myTeamsPage.css";
 
-const MyTeamsPage = () => {
+const normalizeString = (str) =>
+    str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+export default function MyTeamsPage() {
+    const [teams, setTeams] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    useEffect(() => {
+        getTeams().then((data) => setTeams(data));
+    }, []);
+
+    const filteredTeams = teams.filter((team) =>
+        normalizeString(team.name).includes(normalizeString(searchTerm))
+    );
+
     return (
         <div>
             <div className="flex justify-between items-center mt-6">
@@ -9,8 +27,17 @@ const MyTeamsPage = () => {
                     <IconFilter />
                 </span>
             </div>
-        </div>
-    )
-}
+            <div className="mx-4">
+                <input
+                    type="text"
+                    placeholder="Buscar"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full px-5 py-1 border rounded-lg my-1"
+                />
+            </div>
 
-export default MyTeamsPage;
+            <List teamsList={filteredTeams} />
+        </div>
+    );
+}
