@@ -9,11 +9,11 @@ function login({ userName, password }) {
   });
 }
 
-function register({ userName, password, email }) {
+function register({ username, password }) {
   return call({
     uri: "auth",
     method: "POST",
-    body: { userName: userName, password: password, email: email },
+    body: { username: username, password: password },
   });
 }
 

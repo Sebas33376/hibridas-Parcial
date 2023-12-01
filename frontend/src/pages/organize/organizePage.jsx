@@ -5,8 +5,6 @@ import { addTeam } from "../../services/teams.service";
 import { useProfile } from "../../context/SessionContext";
 
 const OrganizePage = () => {
-  // Estado para almacenar los datos del formulario
-
   const profile = useProfile();
 
   const [formData, setFormData] = useState({
@@ -25,107 +23,115 @@ const OrganizePage = () => {
     direction: "",
   });
 
-  // Manejar cambios en los campos del formulario
   const onChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Manejar envío del formulario
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
       console.log(formData);
-      addTeam({ formData })
+      addTeam({ formData });
     },
     [formData]
   );
 
   return (
-    <div>
-      <div className="flex justify-between items-center mt-6">
+    <div className="max-w-md mx-auto my-20 ">
+      <div className="flex justify-between items-center mb-6">
         <h1 className="my-6 px-4 font-bold text-xl">Organizar</h1>
         <span className="mr-4">
           <IconFilter />
         </span>
       </div>
 
-      <form onSubmit={onSubmit}>
-        <label>
-          Nombre del equpo:
+      <form onSubmit={onSubmit} className="space-y-4">
+        <div>
+          <label className="block mb-2">Nombre del equipo:</label>
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={onChange}
+            className="w-full px-4 py-2 border rounded-md"
           />
-        </label>
-        <br />
-        <label>
-          Portada:
+        </div>
+
+        <div>
+          <label className="block mb-2">Portada:</label>
           <input
             type="text"
             name="img"
             value={formData.img}
             onChange={onChange}
+            className="w-full px-4 py-2 border rounded-md"
           />
-        </label>
-        <br />
-        <label>
-          Deporte:
-          <select name="sport" onChange={onChange} value={formData.sport}>
+        </div>
+        <div>
+          <label className="block mb-2">Deporte:</label>
+          <select
+            name="sport"
+            onChange={onChange}
+            value={formData.sport}
+            className="w-full px-4 py-2 border rounded-md"
+          >
             <option value="Football">Football</option>
             <option value="Volley">Volley</option>
-            <option value="Handball">Handball</option>
-            <option value="Tennis">Tennis</option>
-            <option value="Basketball">Basketball</option>
-            <option value="Padel">Padel</option>
           </select>
-        </label>
-        <br />
-        <label>
-          Ciudad:
+        </div>
+        <div>
+          <label className="block mb-2">Ciudad:</label>
           <input
             type="text"
             name="place"
             value={formData.place}
             onChange={onChange}
+            className="w-full px-4 py-2 border rounded-md"
           />
-        </label>
+        </div>
         <br />
-        <label>
-          Fecha del encuentro:
+        <div>
+          <label className="block mb-2">Fecha del encuentro:</label>
           <input
             type="text"
             name="date"
             value={formData.date}
             onChange={onChange}
+            className="w-full px-4 py-2 border rounded-md"
           />
-        </label>
+        </div>
         <br />
-        <label>
-          Hora:
+        <div>
+          <label className="block mb-2">Hora:</label>
           <input
             type="text"
             name="hour"
             value={formData.hour}
             onChange={onChange}
+            className="w-full px-4 py-2 border rounded-md"
           />
-        </label>
+        </div>
         <br />
-        <label>
-          Descripción:
+        <div>
+          <label className="block mb-2">Descripción:</label>
           <input
             type="text"
             name="description"
             value={formData.description}
             onChange={onChange}
+            className="w-full px-4 py-2 border rounded-md"
           />
-        </label>
+        </div>
         <br />
-        <label>
-          Maximo de jugadores:
-          <select name="max" onChange={onChange} value={formData.max}>
+        <div>
+          <label className="block mb-2">Maximo de jugadores:</label>
+          <select
+            name="max"
+            onChange={onChange}
+            value={formData.max}
+            className="w-full px-4 py-2 border rounded-md"
+          >
             <option value="2">2</option>
             <option value="4">4</option>
             <option value="6">6</option>
@@ -133,37 +139,54 @@ const OrganizePage = () => {
             <option value="10">10</option>
             <option value="12">12</option>
           </select>
-        </label>
+        </div>
         <br />
-        <label>
-          Nivel de habilidad:
-          <select name="skills_level" onChange={onChange} value={formData.skills_level}>
+        <div>
+          <label className="block mb-2">Nivel de habilidad:</label>
+          <select
+            name="skills_level"
+            onChange={onChange}
+            value={formData.skills_level}
+            className="w-full px-4 py-2 border rounded-md"
+          >
             <option value="Principiante">Principiante</option>
             <option value="Intermedio">Intermedio</option>
             <option value="Avanzado">Avanzado</option>
           </select>
-        </label>
-        <br />
-        <label>
-          Genero de jugadores:
-          <select name="gender" onChange={onChange} value={formData.gender}>
+        </div>
+
+        <div>
+          <label className="block mb-2">Genero de jugadores:</label>
+          <select
+            name="gender"
+            onChange={onChange}
+            value={formData.gender}
+            className="w-full px-4 py-2 border rounded-md"
+          >
             <option value="Hombres">Hombres</option>
             <option value="Mujeres">Mujeres</option>
             <option value="Mixto">Mixto</option>
           </select>
-        </label>
+        </div>
         <br />
-        <label>
-          Dirección del punto de encuentro:
+        <div>
+          <label className="block mb-2">Dirección del punto de encuentro:</label>
           <input
             type="text"
             name="direction"
             value={formData.direction}
             onChange={onChange}
+            className="w-full px-4 py-2 border rounded-md"
           />
-        </label>
-        <br />
-        <button type="submit">Organizar equipo</button>
+        </div>
+        <div >
+          <button
+            type="submit"
+            className="w-full bg-main-color1 text-white font-bold py-2 px-4 rounded-md"
+          >
+            Organizar equipo
+          </button>
+        </div>
       </form>
     </div>
   );
