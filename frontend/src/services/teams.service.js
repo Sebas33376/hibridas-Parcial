@@ -9,7 +9,7 @@ function getTeamsById(id) {
 }
 
 function addTeam({ formData }) {
-   console.log(formData);
+  console.log(formData);
   const {
     name,
     img,
@@ -33,7 +33,7 @@ function addTeam({ formData }) {
       name: name,
       img: img,
       sport: sport,
-      joined:joined,
+      joined: joined,
       place: place,
       max: max,
       date: date,

@@ -6,4 +6,4 @@ const IconLogo = () => {
     )
 }
 
-export default IconLogo; 
+export default IconLogo;

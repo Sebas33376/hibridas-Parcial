@@ -6,7 +6,7 @@ const getTeams = (req, res) => {
 
     service.getTeams(filter)
         .then(teams => res.status(200).json(teams))
-        .catch(err => res.status(404).json({err}))
+        .catch(err => res.status(404).json({ err }))
 }
 
 const getTeamById = (req, res) => {
@@ -27,7 +27,7 @@ const addTeam = (req, res) => {
         .then(newTeam => {
             res.status(201).json(newTeam);
         })
-        .catch(err => res.status(500).json({err}));
+        .catch(err => res.status(500).json({ err }));
 }
 
 const replaceTeam = (req, res) => {
@@ -69,7 +69,7 @@ const deletTeam = (req, res) => {
     const id = req.params.id;
     service.deletTeam(id)
         .then(team => res.status(202).json(team))
-        .catch((err) => res.status(204).json({err}))
+        .catch((err) => res.status(204).json({ err }))
 
 }
 

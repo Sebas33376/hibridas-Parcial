@@ -7,7 +7,6 @@ const RegisterPage = () => {
   const navigate = useNavigate();
   const [userName, setuserName] = useState("");
   const [password, setPassword] = useState("")
-  
 
   const onCahngeUserName = useCallback(
     (e) => {
@@ -26,7 +25,7 @@ const RegisterPage = () => {
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
-  
+
       register({ username: userName, password: password })
         .then(({ token }) => {
           localStorage.setItem("token", token);
@@ -38,7 +37,6 @@ const RegisterPage = () => {
     },
     [userName, password, navigate]
   );
-  
 
   return (
     <div className="max-w-md mx-auto my-6 p-6 bg-white rounded-md shadow-md register-container">

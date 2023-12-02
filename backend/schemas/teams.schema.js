@@ -5,7 +5,7 @@ const teamSchema = yup.object({
     img: yup.string().required(),
     sport: yup.string().required(),
     joined: yup.array().of(yup.string()).required(),
-    max:yup.string().required(),
+    max: yup.string().required(),
     place: yup.string().required(),
     date: yup.string().required(),
     hour: yup.string().required(),

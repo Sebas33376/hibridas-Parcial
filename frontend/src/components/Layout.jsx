@@ -1,7 +1,7 @@
 import React from "react";
 import { SessionProvider } from "../context/SessionContext.jsx";
 import NavBar from "./NavBar.jsx";
-import Footer from "./footer"; 
+import Footer from "./footer";
 
 const Layout = ({ children, url, ...rest }) => {
   return (
@@ -9,7 +9,7 @@ const Layout = ({ children, url, ...rest }) => {
       <div {...rest}>
         <NavBar url={url} />
         {children}
-        <Footer /> 
+        <Footer />
       </div>
     </SessionProvider>
   );

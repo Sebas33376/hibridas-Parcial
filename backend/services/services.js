@@ -42,7 +42,7 @@ async function deletTeam(id) {
 }
 
 async function getMyTeams(id) {
-    return colectionTeam.findOne({ organizer_id: new ObjectId(id), joined: new ObjectId(id)});
+    return colectionTeam.findOne({ organizer_id: new ObjectId(id), joined: new ObjectId(id) });
 }
 
 export {

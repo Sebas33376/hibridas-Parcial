@@ -4,7 +4,7 @@ import { PropTypes } from "prop-types";
 import IconUbicationDark from "../icons/IconUbicationDark";
 
 const MyTeams = ({ myTeams }) => {
-    console.log(myTeams);
+  console.log(myTeams);
   const { _id, name, joined, max, place, skills_level, gender, img } = myTeams;
   return (
     <li className="flex items-center justify-between p-5 border-gray-300 rounded-md my-4 mx-2 shadow-md">

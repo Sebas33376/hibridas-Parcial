@@ -16,7 +16,7 @@ export default function MyTeamsPage() {
     const filteredTeams = teams.filter((team) =>
         team.name.includes(searchTerm)
     );
-console.log(filteredTeams);
+    console.log(filteredTeams);
     return (
         <div>
             <div className="flex justify-between items-center mt-6">

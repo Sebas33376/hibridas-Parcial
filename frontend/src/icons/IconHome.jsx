@@ -6,4 +6,4 @@ const IconHome = () => {
     )
 }
 
-export default IconHome; 
+export default IconHome;
