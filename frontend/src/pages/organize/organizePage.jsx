@@ -46,7 +46,7 @@ const OrganizePage = () => {
         </span>
       </div>
 
-      <form onSubmit={onSubmit} className="space-y-4">
+      <form onSubmit={onSubmit} className="space-y-4 p-5">
         <div>
           <label className="block mb-2">Nombre del equipo:</label>
           <input
