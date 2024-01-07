@@ -30,41 +30,41 @@ const routes = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "teams",
+        path: "Teams",
         element: <Suspense fallback={<div>Cargando...</div>}><TeamsPage /></Suspense>,
       },
       {
-        path: "profile",
+        path: "Profile",
         element: <ProfilePage />,
       },
       {
-        path: "teams/:id",
+        path: "Teams/:id",
         element: <TeamsDetails />,
       },
       {
-        path: "history",
+        path: "History",
         element: <HistoryPage />,
       },
       {
-        path: "myTeams",
+        path: "MyTeams",
         element: <MyTeamsPage />,
       },
       {
-        path: "organize",
+        path: "Organize",
         element: <OrganizePage />,
       },
     ],
   },
   {
-    path: "/selection",
+    path: "/Selection",
     element: <AuthSelecction />,
   },
   {
-    path: "/register",
+    path: "/Register",
     element: <RegisterPage />,
   },
   {
-    path: "/login",
+    path: "/Login",
     element: <LoginPage />,
   },
 ]);

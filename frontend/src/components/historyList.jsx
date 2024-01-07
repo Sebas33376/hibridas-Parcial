@@ -1,4 +1,4 @@
-import History from "./history.jsx";
+import History from "./History.jsx";
 
 const List = ({ historyList }) => {
     return (

@@ -1,4 +1,4 @@
-import "./historyPage.css";
+import "./HistoryPage.css";
 import IconFilter from "../../icons/IconFilter";
 import { useEffect, useState } from "react";
 import List from "../../components/historyList";

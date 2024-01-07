@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import List from "../../components/myTeamsList";
 import { getTeams } from "../../services/teams.service";
 import IconFilter from "../../icons/IconFilter";
-import "./myTeamsPage.css";
+import "./MyTeamsPage.css";
 
 
 export default function MyTeamsPage() {

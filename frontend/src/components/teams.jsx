@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./teams.css";
+import "./Teams.css";
 import { PropTypes } from "prop-types";
 import IconUbicationDark from "../icons/IconUbicationDark";
 

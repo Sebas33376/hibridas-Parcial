@@ -1,4 +1,4 @@
-import MyTeams from "./myTeams";
+import MyTeams from "./MyTeams";
 
 const List = ({ teamsList }) => {
     return (

@@ -1,4 +1,4 @@
-import "./organizePage.css";
+import "./OrganizePage.css";
 import IconFilter from "../../icons/IconFilter";
 import { useCallback, useState } from "react";
 import { addTeam } from "../../services/teams.service";
