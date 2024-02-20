@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb"
 
-const client = new MongoClient("mongodb+srv://Sebas33376:Loria43314475@parciales.4qte1wq.mongodb.net");
+const client = new MongoClient("mongodb+srv://josefinanocelli:1234@proyecto.jxdpxfn.mongodb.net/");
 
 const db = client.db("AH20232CP1")
 
