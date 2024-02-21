@@ -1,8 +1,9 @@
 import { useState, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { login } from "../../services/auth.service";
 import "./LoginPage.css";
 import logo from "../../../public/logo.png"
+import IconBack from "../../icons/IconBack";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -40,38 +41,42 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="bg-main-dark p-7">
+      <div className="bg-main-dark p-5 flex justify-between items-center">
+        <Link to="/Selection">
+          <span>
+            <IconBack />
+          </span>
+        </Link>
         <img src={logo} alt="logo de NEXOSPORT" />
       </div>
-      <div className="container mx-auto px-4 mt-20">
+      <div className="container mx-auto px-4 mt-20 flex flex-col items-center justify-center">
         <form onSubmit={onSubmit}>
-          <h1 className="text-3xl my-5 font-bold">Bienvenido de vuelta!</h1>
-          <p className="mb-3">Ingresá tu email y tu contraseña para empezar</p>
-          <div className="space-y-3 mt-10">
+          <h1 className="text-3xl my-5 font-bold">¡Bienvenido de vuelta!</h1>
+          <p className="mb-3">Ingrese su mail y su contraseña para empezar</p>
+          <div className="">
+            <label>Nombre de usuario:</label>
             <input
-              className="w-full border border-input-dark bg-input py-4 px-3 rounded-lg "
+              className="w-full border border-input-dark bg-input mb-5 py-4 px-3 rounded-lg "
               type="text"
               name="userName"
               id="userName"
-              placeholder="Nombre de usuario"
+              placeholder="Ingrese su nombre de usuario aqui..."
               onChange={onCahngeUserName}
               value={userName}
             />
+            <label>Contraseña:</label>
             <input
-              className="w-full border border-input-dark bg-input py-4 px-3 rounded-lg"
+              className="w-full border border-input-dark bg-input mb-5 py-4 px-3 rounded-lg"
               type="password"
               name="password"
               id="password"
-              placeholder="Password"
+              placeholder="Ingrese su contraseña aqui..."
               onChange={onCahngePassword}
               value={password}
             />
           </div>
           <p>{error}</p>
-          <button
-            type="submit"
-            className="absolute top-5 right-0 mt-3 mr-3 text-blue-500 py-1 px-3 rounded-lg"
-          >
+          <button type="submit" className="bg-main-color1 text-white text-center py-4 px-4 rounded-md flex items-center hover:bg-green-700">
             Iniciar sesión
           </button>
         </form>

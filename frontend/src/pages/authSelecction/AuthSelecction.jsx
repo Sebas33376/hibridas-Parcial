@@ -7,7 +7,7 @@ const AuthSelecction = () => {
     <div className="bg-main-dark h-screen flex flex-col items-center justify-center">
       <img src={logo} alt="logo de NEXOSPORT" />
       <h1 className="text-white text-3xl font-bold mb-8">NEXOSPORT</h1>
-      <Link to="/login" className="bg-main-color1 text-white text-center py-3 px-4 rounded-md mb-4 flex items-center">
+      <Link to="/login" className="bg-main-color1 text-white text-center py-3 px-4 rounded-md mb-4 flex items-center hover:bg-green-700">
         <span className="mr-4">
           <IconCard />
         </span>
