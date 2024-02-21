@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../services/auth.service";
 import "./LoginPage.css";
+import logo from "../../../public/logo.png"
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const LoginPage = () => {
   return (
     <>
       <div className="bg-main-dark p-7">
-        {/*aca iria el contenido de la img para el logito*/}
+        <img src={logo} alt="logo de NEXOSPORT" />
       </div>
       <div className="container mx-auto px-4 mt-20">
         <form onSubmit={onSubmit}>
@@ -69,7 +70,7 @@ const LoginPage = () => {
           <p>{error}</p>
           <button
             type="submit"
-            className="absolute top-0 right-0 mt-3 mr-3 text-blue-500 py-1 px-3 rounded-lg"
+            className="absolute top-5 right-0 mt-3 mr-3 text-blue-500 py-1 px-3 rounded-lg"
           >
             Iniciar sesión
           </button>

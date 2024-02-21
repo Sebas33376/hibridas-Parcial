@@ -11,7 +11,7 @@ function call({ uri, method = "GET", body = undefined }) {
     .then(res => {
       if (!res.ok || res.status === 401) {
         localStorage.removeItem("token");
-        console.log("borre");
+        //console.log("borre");
         throw res.json()
       }
       return res.json();
