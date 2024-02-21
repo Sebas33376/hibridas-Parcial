@@ -9,6 +9,7 @@ const RegisterPage = () => {
   const navigate = useNavigate();
   const [userName, setuserName] = useState("");
   const [password, setPassword] = useState("")
+  const [error, setError] = useState("");
 
   const onCahngeUserName = useCallback(
     (e) => {
@@ -33,9 +34,7 @@ const RegisterPage = () => {
           localStorage.setItem("token", token);
           navigate("/", { replace: true });
         })
-        .catch((error) => {
-          console.error("Registration failed:", error);
-        });
+        .catch((err) => setError(err.error));
     },
     [userName, password, navigate]
   );
@@ -50,47 +49,36 @@ const RegisterPage = () => {
         </Link>
         <img src={logo} alt="logo de NEXOSPORT" />
       </div>
-      <div className="max-w-md mx-auto my-6 p-6 bg-white rounded-md shadow-md register-container">
-        <h1 className="my-6 px-4 font-bold text-xl text-center">Registrar</h1>
+      <div className="container mx-auto px-4 mt-20 flex flex-col items-center justify-center">
         <form onSubmit={onSubmit}>
+          <h1 className="text-3xl my-5 font-bold">¡Regístrate!</h1>
+          <p className="mb-3">Ingrese mail y contraseña para empezar</p>
           <div className="mb-4">
-            <label
-              htmlFor="username"
-              className="block text-sm font-medium text-gray-600"
-            >
-              Nombre de usuario
-            </label>
+            <label htmlFor="username">Nombre de usuario:</label>
             <input
+              className="w-full border border-input-dark bg-input mb-5 py-4 px-3 rounded-lg"
               type="text"
               id="username"
               name="userName"
+              placeholder="Ingrese su nombre de usuario aqui..."
               value={userName}
               onChange={onCahngeUserName}
-              className="mt-1 p-2 w-full border rounded-md"
               required
             />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-600"
-            >
-              Contraseña
-            </label>
+            <label htmlFor="password">Contraseña:</label>
             <input
+              className="w-full border border-input-dark bg-input mb-5 py-4 px-3 rounded-lg"
               type="password"
               id="password"
               name="password"
+              placeholder="Ingrese su contraseña aqui..."
               value={password}
               onChange={onCahngePassword}
-              className="mt-1 p-2 w-full border rounded-md"
               required
             />
           </div>
-          <button
-            type="submit"
-            className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
-          >
+          <p>{error}</p>
+          <button type="submit" className="bg-main-color1 text-white text-center py-4 px-4 rounded-md flex items-center hover:bg-green-700">
             Registrarse
           </button>
         </form>

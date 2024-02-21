@@ -52,19 +52,20 @@ const LoginPage = () => {
       <div className="container mx-auto px-4 mt-20 flex flex-col items-center justify-center">
         <form onSubmit={onSubmit}>
           <h1 className="text-3xl my-5 font-bold">¡Bienvenido de vuelta!</h1>
-          <p className="mb-3">Ingrese su mail y su contraseña para empezar</p>
-          <div className="">
-            <label>Nombre de usuario:</label>
+          <p className="mb-3">Ingrese mail y contraseña para empezar</p>
+          <div>
+            <label htmlFor="userName">Nombre de usuario:</label>
             <input
-              className="w-full border border-input-dark bg-input mb-5 py-4 px-3 rounded-lg "
+              className="w-full border border-input-dark bg-input mb-5 py-4 px-3 rounded-lg"
               type="text"
               name="userName"
               id="userName"
               placeholder="Ingrese su nombre de usuario aqui..."
               onChange={onCahngeUserName}
               value={userName}
+              required
             />
-            <label>Contraseña:</label>
+            <label htmlFor="password">Contraseña:</label>
             <input
               className="w-full border border-input-dark bg-input mb-5 py-4 px-3 rounded-lg"
               type="password"
@@ -73,6 +74,7 @@ const LoginPage = () => {
               placeholder="Ingrese su contraseña aqui..."
               onChange={onCahngePassword}
               value={password}
+              required
             />
           </div>
           <p>{error}</p>
