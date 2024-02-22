@@ -1,7 +1,7 @@
 import { MongoClient} from "mongodb"
 import bcrypt from "bcrypt"
 
-const client = new MongoClient("mongodb+srv://josefinanocelli:1234@proyecto.jxdpxfn.mongodb.net/");
+const client = new MongoClient("mongodb+srv://josefina:josefina1998@proyecto.jxdpxfn.mongodb.net/");
 
 const db = client.db("Nexosport");
 
@@ -26,22 +26,29 @@ async function addAccount(account) {
 }
 
 async function login(account) {
+    try {
+        await client.connect()
 
-    await client.connect()
+        const exist = await colectionUser.findOne({ userName: account.userName })
 
-    const exist = await colectionUser.findOne({ userName: account.userName })
+        if (!exist) {
+            throw new Error("El usuario no se encontro")
+        }
 
-    if (!exist) {
-        throw new Error("No se pudo logear")
+        const isMatch = await bcrypt.compare(account.password, exist.password)
+
+        if (!isMatch) {
+            throw new Error("Contraseña invalida")
+        }
+
+        return { ...exist, password: undefined }
+        
+
+    } catch (error) {
+        console.log(error)
+
     }
-
-    const isMatch = await bcrypt.compare(account.password, exist.password)
-
-    if (!isMatch) {
-        throw new Error("No se pudo logear")
-    }
-
-    return { ...exist, password: undefined }
+    
 }
 
 

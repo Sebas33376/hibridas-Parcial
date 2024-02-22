@@ -29,7 +29,7 @@ const RegisterPage = () => {
     (e) => {
       e.preventDefault();
 
-      register({ username: userName, password: password })
+      register({ userName: userName, password: password })
         .then(({ token }) => {
           localStorage.setItem("token", token);
           navigate("/", { replace: true });
