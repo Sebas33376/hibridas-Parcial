@@ -12,6 +12,10 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import { useSession } from "../context/SessionContext";
+import React from "react";
+
+
 
 const NavBar = () => {
   const { profile, onLogOut } = useSession();
