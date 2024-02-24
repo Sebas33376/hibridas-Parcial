@@ -1,4 +1,4 @@
-import { MongoClient} from "mongodb"
+import { MongoClient } from "mongodb"
 import bcrypt from "bcrypt"
 
 const client = new MongoClient("mongodb+srv://josefina:josefina1998@proyecto.jxdpxfn.mongodb.net/");
@@ -42,13 +42,13 @@ async function login(account) {
         }
 
         return { ...exist, password: undefined }
-        
+
 
     } catch (error) {
         console.log(error)
 
     }
-    
+
 }
 
 

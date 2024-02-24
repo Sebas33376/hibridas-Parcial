@@ -16,8 +16,8 @@ const HomePage = () => {
       <div className="bg-main-dark px-3 text-white py-3 space-y-3">
         <h2 className="text-2xl font-bold mx-10">¡Organizá tu partido!</h2>
         <p className="mx-10">
-          ¡Creá partidos del deporte que más te guste! <br/> ¡Elige el lugar, la fecha
-          y la hora! <br/> ¡Anímate a ser el director de tus propios eventos
+          ¡Creá partidos del deporte que más te guste! <br /> ¡Elige el lugar, la fecha
+          y la hora! <br /> ¡Anímate a ser el director de tus propios eventos
           deportivos!
         </p>
       </div>
