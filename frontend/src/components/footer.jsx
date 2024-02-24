@@ -19,7 +19,7 @@ const Footer = () => {
     >
       <Container>
         <Typography variant="body2" align="center">
-          © {new Date().getFullYear()} <span className="text-main-color1">NEXOSPORT</span> .Todos los derechos reservados.
+          ©{new Date().getFullYear()} <span className="text-main-color1">NEXO</span>SPORT. Todos los derechos reservados.
         </Typography>
       </Container>
     </Box>

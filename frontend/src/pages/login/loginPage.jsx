@@ -78,7 +78,7 @@ const LoginPage = () => {
             />
           </div>
           <p>{error}</p>
-          <button type="submit" className="bg-main-color1 text-white text-center py-4 px-4 rounded-md flex items-center hover:bg-green-700">
+          <button type="submit" className="bg-main-color1 text-white text-center py-4 px-4 rounded-md flex items-center hover:bg-green-600">
             Iniciar sesión
           </button>
         </form>

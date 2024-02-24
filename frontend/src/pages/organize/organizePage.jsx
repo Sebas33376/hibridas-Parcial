@@ -3,6 +3,8 @@ import IconFilter from "../../icons/IconFilter";
 import { useCallback, useState } from "react";
 import { addTeam } from "../../services/teams.service";
 import { useProfile } from "../../context/SessionContext";
+import IconBack from "../../icons/IconBack";
+import { Link } from "react-router-dom";
 
 const OrganizePage = () => {
   const profile = useProfile();
@@ -38,157 +40,184 @@ const OrganizePage = () => {
   );
 
   return (
-    <div className="max-w-md mx-auto my-20 ">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="my-6 px-4 font-bold text-xl">Organizar</h1>
-        <span className="mr-4">
-          <IconFilter />
-        </span>
+    <>
+      <button type="button" className="bg-main-dark inline-block p-3 ml-5 mt-3 rounded-md">
+        <Link to="/">
+          <span >
+            <IconBack />
+          </span>
+        </Link>
+      </button>
+      <div className="max-w-md mx-auto mb-20">
+        <div className="flex justify-between items-center my-2">
+          <h1 className="my-2 px-4 font-bold text-xl">Organizar</h1>
+        </div>
+
+        <form onSubmit={onSubmit} className="space-y-4 p-5">
+          <div>
+            <label className="block mb-2" htmlFor="nombre">Nombre del equipo:</label>
+            <input
+              type="text"
+              name="name"
+              id="nombre"
+              value={formData.name}
+              onChange={onChange}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="imagen">Portada:</label>
+            <input
+              type="text"
+              name="img"
+              id="imagen"
+              value={formData.img}
+              onChange={onChange}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="deporte">Deporte:</label>
+            <select
+              name="sport"
+              id="deporte"
+              onChange={onChange}
+              value={formData.sport}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            >
+              <option value="Baseball">Baseball</option>
+              <option value="Basquet">Basquet</option>
+              <option value="Football">Football</option>
+              <option value="Jockey">Jockey</option>
+              <option value="Rugby">Rugby</option>
+              <option value="Tenis">Tenis</option>
+              <option value="Volley">Volley</option>
+            </select>
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="ciudad">Ciudad:</label>
+            <input
+              type="text"
+              name="place"
+              id="ciudad"
+              value={formData.place}
+              onChange={onChange}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="fecha">Fecha del encuentro:</label>
+            <input
+              type="text"
+              name="date"
+              id="fecha"
+              value={formData.date}
+              onChange={onChange}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="hora">Hora:</label>
+            <input
+              type="text"
+              name="hour"
+              id="hora"
+              value={formData.hour}
+              onChange={onChange}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="descripcion">Descripción:</label>
+            <input
+              type="text"
+              name="description"
+              id="descripcion"
+              value={formData.description}
+              onChange={onChange}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="jugadores">Maximo de jugadores:</label>
+            <select
+              name="max"
+              id="jugadores"
+              onChange={onChange}
+              value={formData.max}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            >
+              <option value="2">2</option>
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="nivel">Nivel de habilidad:</label>
+            <select
+              name="skills_level"
+              id="nivel"
+              onChange={onChange}
+              value={formData.skills_level}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            >
+              <option value="Principiante">Principiante</option>
+              <option value="Intermedio">Intermedio</option>
+              <option value="Avanzado">Avanzado</option>
+              <option value="Profesional">Profesional</option>
+            </select>
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="genero">Genero de jugadores:</label>
+            <select
+              name="gender"
+              id="genero"
+              onChange={onChange}
+              value={formData.gender}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            >
+              <option value="Hombres">Hombres</option>
+              <option value="Mujeres">Mujeres</option>
+              <option value="Mixto">Mixto</option>
+            </select>
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="direccion">Dirección del punto de encuentro:</label>
+            <input
+              type="text"
+              name="direction"
+              id="direccion"
+              value={formData.direction}
+              onChange={onChange}
+              className="w-full px-4 py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div >
+            <button
+              type="submit"
+              className="w-full bg-main-color1 text-white font-bold py-2 px-4 rounded-md hover:bg-green-600"
+            >
+              Organizar equipo
+            </button>
+          </div>
+        </form>
       </div>
+    </>
 
-      <form onSubmit={onSubmit} className="space-y-4 p-5">
-        <div>
-          <label className="block mb-2">Nombre del equipo:</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={onChange}
-            className="w-full px-4 py-2 border rounded-md"
-          />
-        </div>
-
-        <div>
-          <label className="block mb-2">Portada:</label>
-          <input
-            type="text"
-            name="img"
-            value={formData.img}
-            onChange={onChange}
-            className="w-full px-4 py-2 border rounded-md"
-          />
-        </div>
-        <div>
-          <label className="block mb-2">Deporte:</label>
-          <select
-            name="sport"
-            onChange={onChange}
-            value={formData.sport}
-            className="w-full px-4 py-2 border rounded-md"
-          >
-            <option value="Football">Football</option>
-            <option value="Volley">Volley</option>
-          </select>
-        </div>
-        <div>
-          <label className="block mb-2">Ciudad:</label>
-          <input
-            type="text"
-            name="place"
-            value={formData.place}
-            onChange={onChange}
-            className="w-full px-4 py-2 border rounded-md"
-          />
-        </div>
-        <br />
-        <div>
-          <label className="block mb-2">Fecha del encuentro:</label>
-          <input
-            type="text"
-            name="date"
-            value={formData.date}
-            onChange={onChange}
-            className="w-full px-4 py-2 border rounded-md"
-          />
-        </div>
-        <br />
-        <div>
-          <label className="block mb-2">Hora:</label>
-          <input
-            type="text"
-            name="hour"
-            value={formData.hour}
-            onChange={onChange}
-            className="w-full px-4 py-2 border rounded-md"
-          />
-        </div>
-        <br />
-        <div>
-          <label className="block mb-2">Descripción:</label>
-          <input
-            type="text"
-            name="description"
-            value={formData.description}
-            onChange={onChange}
-            className="w-full px-4 py-2 border rounded-md"
-          />
-        </div>
-        <br />
-        <div>
-          <label className="block mb-2">Maximo de jugadores:</label>
-          <select
-            name="max"
-            onChange={onChange}
-            value={formData.max}
-            className="w-full px-4 py-2 border rounded-md"
-          >
-            <option value="2">2</option>
-            <option value="4">4</option>
-            <option value="6">6</option>
-            <option value="8">8</option>
-            <option value="10">10</option>
-            <option value="12">12</option>
-          </select>
-        </div>
-        <br />
-        <div>
-          <label className="block mb-2">Nivel de habilidad:</label>
-          <select
-            name="skills_level"
-            onChange={onChange}
-            value={formData.skills_level}
-            className="w-full px-4 py-2 border rounded-md"
-          >
-            <option value="Principiante">Principiante</option>
-            <option value="Intermedio">Intermedio</option>
-            <option value="Avanzado">Avanzado</option>
-          </select>
-        </div>
-
-        <div>
-          <label className="block mb-2">Genero de jugadores:</label>
-          <select
-            name="gender"
-            onChange={onChange}
-            value={formData.gender}
-            className="w-full px-4 py-2 border rounded-md"
-          >
-            <option value="Hombres">Hombres</option>
-            <option value="Mujeres">Mujeres</option>
-            <option value="Mixto">Mixto</option>
-          </select>
-        </div>
-        <br />
-        <div>
-          <label className="block mb-2">Dirección del punto de encuentro:</label>
-          <input
-            type="text"
-            name="direction"
-            value={formData.direction}
-            onChange={onChange}
-            className="w-full px-4 py-2 border rounded-md"
-          />
-        </div>
-        <div >
-          <button
-            type="submit"
-            className="w-full bg-main-color1 text-white font-bold py-2 px-4 rounded-md"
-          >
-            Organizar equipo
-          </button>
-        </div>
-      </form>
-    </div>
   );
 };
 

@@ -26,16 +26,12 @@ function getProfile() {
     .then(response => response)
     .catch(error => {
       if (error.message === "No autorizado: Token inválido o caducado") {
-       
         console.error("Token no válido o caducado:", error.message);
       } else {
-
         console.error("Error al obtener el perfil:", error.message);
       }
-      throw error; 
+      throw error;
     });
 }
-
-
 
 export { login, logOut, getProfile, register };

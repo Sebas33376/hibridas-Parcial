@@ -3,7 +3,8 @@ import List from "../../components/myTeamsList";
 import { getTeams } from "../../services/teams.service";
 import IconFilter from "../../icons/IconFilter";
 import "./MyTeamsPage.css";
-
+import { Link } from "react-router-dom";
+import IconBack from "../../icons/IconBack";
 
 export default function MyTeamsPage() {
     const [teams, setTeams] = useState([]);
@@ -18,24 +19,32 @@ export default function MyTeamsPage() {
     );
     console.log(filteredTeams);
     return (
-        <div>
-            <div className="flex justify-between items-center mt-6">
-                <h1 className="my-6 px-4 font-bold text-xl">Mis equipos</h1>
-                <span className="mr-4">
+        <>
+            <button type="button" className="bg-main-dark inline-block p-3 ml-5 mt-3 rounded-md">
+                <Link to="/">
+                    <span >
+                        <IconBack />
+                    </span>
+                </Link>
+            </button>
+            <div className="max-w-mx mx-auto mb-20">
+                <div className="flex justify-between items-center my-2">
+                    <h1 className="my-2 px-4 font-bold text-xl">Mis equipos</h1>
+                    {/* <span className="mr-4">
                     <IconFilter />
-                </span>
+                </span> */}
+                </div>
+                <div className="mx-4">
+                    <input
+                        type="text"
+                        placeholder="Buscar"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full px-5 py-1 border rounded-lg my-1"
+                    />
+                </div>
+                <List teamsList={filteredTeams} />
             </div>
-            <div className="mx-4">
-                <input
-                    type="text"
-                    placeholder="Buscar"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-5 py-1 border rounded-lg my-1"
-                />
-            </div>
-
-            <List teamsList={filteredTeams} />
-        </div>
+        </>
     );
 }
