@@ -17,8 +17,12 @@ function register({ userName, password }) {
   });
 }
 
-function logOut() {
-  return call({ uri: "auth", method: "DELETE" });
+function logOut({userName, password}) {
+  return call({ 
+    uri: "auth",
+     method: "DELETE",
+     body: { userName: userName, password: password }
+     });
 }
 
 function getProfile() {

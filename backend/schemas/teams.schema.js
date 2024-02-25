@@ -14,6 +14,7 @@ const teamSchema = yup.object({
     gender: yup.string().required(),
     organizer_id: yup.string().required(),
     direction: yup.string().required(),
+    state: yup.bool().required()
 });
 
 const teamSchemaPatch = yup.object({
@@ -30,6 +31,7 @@ const teamSchemaPatch = yup.object({
     gender: yup.string().required(),
     organizer_id: yup.string().required(),
     direction: yup.string().required(),
+    state: yup.bool().required()
 });
 
 export {

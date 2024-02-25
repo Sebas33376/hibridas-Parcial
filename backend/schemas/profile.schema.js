@@ -1,6 +1,7 @@
 import yup from "yup";
 
 const profile = yup.object({
+  user_id: yup.string().trim().required(),
   name: yup.string().trim().required(),
   lastname: yup.string().trim().required(),
   email: yup.string().trim().required().email(),
@@ -9,10 +10,11 @@ const profile = yup.object({
 });
 
 const profilePatch = yup.object({
-  avatar: yup.string().trim().url().required(),
-  country: yup.string().trim().required(),
+  name: yup.string().trim().required(),
+  lastname: yup.string().trim().required(),
   email: yup.string().trim().required().email(),
-  history: yup.array(),
+  nationality: yup.string().trim().required(),
+  profile_img: yup.string().trim().url().required(),
 });
 
 export { profile, profilePatch };

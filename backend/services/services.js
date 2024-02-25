@@ -8,7 +8,7 @@ const colectionTeam = db.collection("teams");
 
 async function getTeams(filters) {
 
-    const filter = { deleted: { $ne: true } };
+    const filter = { state: { $ne: false } };
 
     if (filters.section) {
         filter.section = filters.section
@@ -37,12 +37,13 @@ async function editTeam(id, team) {
 }
 
 async function deletTeam(id) {
-    const deleted = await colectionTeam.updateOne({ _id: new ObjectId(id) }, { $set: { deleted: true } });
+    const deleted = await colectionTeam.updateOne({ _id: new ObjectId(id) }, { $set: { state: false } });
     return deleted;
 }
 
-async function getMyTeams(id) {
-    return colectionTeam.findOne({ organizer_id: new ObjectId(id), joined: new ObjectId(id) });
+async function getHistory(id) {
+
+    return colectionTeam.find({$or: [{organizer_id: id}, {joined: id}]}).toArray();
 }
 
 export {
@@ -52,5 +53,5 @@ export {
     replaceTeam,
     editTeam,
     deletTeam,
-    getMyTeams
+    getHistory
 }
