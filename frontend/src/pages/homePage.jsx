@@ -22,18 +22,10 @@ const HomePage = () => {
         </p>
       </div>
       <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 px-4 gap-3 my-20">
-        <button type="button" className="bg-main-color2 py-12 text-center rounded-xl md:col-span-1 hover:bg-blue-500">
-          <Link to="/organize">Organizar</Link>
-        </button>
-        <button type="button" className="bg-main-color1 py-12 text-center rounded-xl md:col-span-1 hover:bg-green-600">
-          <Link to="/teams">Buscar Equipos</Link>
-        </button>
-        <button type="button" className="bg-main-color1 py-12 text-center rounded-xl md:col-span-1 hover:bg-green-600">
-          <Link to="/myTeams">Mis Equipos</Link>
-        </button>
-        <button type="button" className="bg-main-color2 py-12 text-center rounded-xl md:col-span-1 hover:bg-blue-500">
-          <Link to="/history">Historial</Link>
-        </button>
+          <Link to="/organize" className="bg-main-color2 py-12 text-center rounded-xl md:col-span-1 hover:bg-blue-500">Organizar</Link>
+          <Link to="/teams" className="bg-main-color1 py-12 text-center rounded-xl md:col-span-1 hover:bg-green-600">Buscar Equipos</Link>
+          <Link to="/myTeams" className="bg-main-color1 py-12 text-center rounded-xl md:col-span-1 hover:bg-green-600">Mis Equipos</Link>
+          <Link to="/history" className="bg-main-color2 py-12 text-center rounded-xl md:col-span-1 hover:bg-blue-500">Historial</Link>
       </div>
     </div>
   );

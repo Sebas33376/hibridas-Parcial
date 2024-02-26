@@ -28,13 +28,11 @@ export default function ProfilePage() {
 
   return (
     <>
-      <button type="button" className="bg-main-dark inline-block p-3 ml-5 mt-3 rounded-md">
-        <Link to="/">
-          <span >
-            <IconBack />
-          </span>
-        </Link>
-      </button>
+      <Link to="/" className="bg-main-dark inline-block p-3 ml-5 mt-3 rounded-md hover:bg-gray-600">
+        <span >
+          <IconBack />
+        </span>
+      </Link>
       <div className="mx-20 my-5">
         <h1 className="my-8 font-bold text-xl">Tú Perfil</h1>
         <div className="mb-4 flex items-start">

@@ -35,19 +35,18 @@ const OrganizePage = () => {
       e.preventDefault();
       console.log(formData);
       addTeam({ formData });
+      formData = "";
     },
     [formData]
   );
 
   return (
     <>
-      <button type="button" className="bg-main-dark inline-block p-3 ml-5 mt-3 rounded-md">
-        <Link to="/">
-          <span >
-            <IconBack />
-          </span>
-        </Link>
-      </button>
+      <Link to="/" className="bg-main-dark inline-block p-3 ml-5 mt-3 rounded-md hover:bg-gray-600">
+        <span >
+          <IconBack />
+        </span>
+      </Link>
       <div className="max-w-md mx-auto mb-20">
         <div className="flex justify-between items-center my-2">
           <h1 className="my-2 px-4 font-bold text-xl">Organizar</h1>
@@ -75,7 +74,6 @@ const OrganizePage = () => {
               value={formData.img}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
-              required
             />
           </div>
           <div>
@@ -88,9 +86,9 @@ const OrganizePage = () => {
               className="w-full px-4 py-2 border rounded-md"
               required
             >
-              <option value="Baseball">Baseball</option>
+              <option value="Beisbol">Beisbol</option>
               <option value="Basquet">Basquet</option>
-              <option value="Football">Football</option>
+              <option value="Futbol">Futbol</option>
               <option value="Jockey">Jockey</option>
               <option value="Rugby">Rugby</option>
               <option value="Tenis">Tenis</option>
@@ -98,11 +96,11 @@ const OrganizePage = () => {
             </select>
           </div>
           <div>
-            <label className="block mb-2" htmlFor="ciudad">Ciudad:</label>
+            <label className="block mb-2" htmlFor="localidad">Localidad:</label>
             <input
               type="text"
               name="place"
-              id="ciudad"
+              id="localidad"
               value={formData.place}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
