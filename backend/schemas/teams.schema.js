@@ -14,7 +14,7 @@ const teamSchema = yup.object({
     gender: yup.string().required(),
     organizer_id: yup.string().required(),
     direction: yup.string().required(),
-    state: yup.bool().required()
+    state: yup.bool()
 });
 
 const teamSchemaPatch = yup.object({

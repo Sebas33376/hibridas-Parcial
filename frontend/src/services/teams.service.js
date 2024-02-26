@@ -12,18 +12,19 @@ function addTeam({ formData }) {
   console.log(formData);
   const {
     name,
-    img,
     sport,
     joined,
-    place,
     max,
+    place,
     date,
+    deadline,
     hour,
     description,
     skills_level,
     gender,
     organizer_id,
-    direction
+    direction,
+    state
   } = formData;
 
   return call({
@@ -31,18 +32,19 @@ function addTeam({ formData }) {
     method: "POST",
     body: {
       name: name,
-      img: img,
       sport: sport,
       joined: joined,
-      place: place,
       max: max,
+      place: place,
       date: date,
+      deadline: deadline,
       hour: hour,
       description: description,
       skills_level: skills_level,
       gender: gender,
       organizer_id: organizer_id,
       direction: direction,
+      state: state
 
     },
   });

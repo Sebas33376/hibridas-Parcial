@@ -23,13 +23,11 @@ export default function HistoryPage() {
 
     return (
         <>
-            <button type="button" className="bg-main-dark inline-block p-3 ml-5 mt-3 rounded-md">
-                <Link to="/">
-                    <span >
-                        <IconBack />
-                    </span>
-                </Link>
-            </button>
+            <Link to="/" className="bg-main-dark inline-block p-3 ml-5 mt-3 rounded-md hover:bg-gray-600">
+                <span >
+                    <IconBack />
+                </span>
+            </Link>
             <div className="max-w-mx mx-auto mb-20">
                 <div className="flex justify-between items-center my-2">
                     <h1 className="my-2 px-4 font-bold text-xl">Historial</h1>
