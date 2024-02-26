@@ -11,18 +11,19 @@ const OrganizePage = () => {
 
   const [formData, setFormData] = useState({
     name: "",
-    img: "",
     sport: "",
     joined: [profile._id],
-    place: "",
     max: "",
+    place: "",
     date: "",
+    deadline:"",
     hour: "",
     description: "",
     skills_level: "",
     gender: "",
     organizer_id: profile._id,
     direction: "",
+    state:true
   });
 
   const onChange = (e) => {
