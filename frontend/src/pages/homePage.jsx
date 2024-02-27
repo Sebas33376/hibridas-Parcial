@@ -1,8 +1,32 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { useProfile } from "../context/SessionContext";
 
 const HomePage = () => {
   const profile = useProfile();
+
+  const navItems = [
+    {
+      to: "/organize",
+      text: "Organizar",
+      color: "bg-main-color2 hover:bg-blue-500",
+    },
+    {
+      to: "/teams",
+      text: "Buscar Equipos",
+      color: "bg-main-color1 hover:bg-green-600",
+    },
+    {
+      to: "/myTeams",
+      text: "Mis Equipos",
+      color: "bg-main-color1 hover:bg-green-600",
+    },
+    {
+      to: "/history",
+      text: "Historial",
+      color: "bg-main-color2 hover:bg-blue-500",
+    },
+  ];
 
   return (
     <div>
@@ -13,43 +37,28 @@ const HomePage = () => {
         <p className="py-2">¿Qué deporte querés hacer hoy?</p>
       </div>
 
-      <div className="bg-main-dark px-3 text-white py-3 space-y-3">
-        <h2 className="text-2xl font-bold mx-10">¡Organizá tu partido!</h2>
-        <p className="mx-10">
-          ¡Creá partidos del deporte que más te guste! <br /> ¡Elige el lugar,
-          la fecha y la hora! <br /> ¡Anímate a ser el director de tus propios
+      <div className="bg-main-dark text-white p-6 space-y-3">
+        <h2 className="text-2xl font-bold mx-20">Organizá tu partido</h2>
+        <p className="mx-20">
+          Creá partidos del deporte que más te guste <br /> Eligí el lugar,
+          la fecha y la hora <br /> ¡Animate a ser el director de tus propios
           eventos deportivos!
         </p>
       </div>
-      <ul className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 my-20">
-        <li>
-          <Link to="/organize" className="bg-main-color2 py-10 px-10 text-center rounded-xl md:col-span-1 inline-block hover:bg-blue-500">
-            Organizar
-          </Link>
-        </li>
-        <li>
-          <Link to="/teams" className="bg-main-color1 py-10 px-10 text-center rounded-xl md:col-span-1 inline-block hover:bg-green-600">
-            Buscar <br /> Equipos
-          </Link>
-        </li>
-        <li>
-          <Link to="/myTeams" className="bg-main-color1 py-10 px-10 text-center rounded-xl md:col-span-1 inline-block hover:bg-green-600">
-            Mis Equipos
-          </Link>
-        </li>
-        <li>
-          <Link to="/history" className="bg-main-color2 py-10 px-10 text-center rounded-xl md:col-span-1 inline-block hover:bg-blue-500">
-            Historial
-          </Link>
-        </li>
-      </ul>
 
-      {/* <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 px-4 gap-3 my-20">
-        <Link to="/organize" className="bg-main-color2 py-12 text-center rounded-xl md:col-span-1 hover:bg-blue-500">Organizar</Link>
-        <Link to="/teams" className="bg-main-color1 py-12 text-center rounded-xl md:col-span-1 hover:bg-green-600">Buscar Equipos</Link>
-        <Link to="/myTeams" className="bg-main-color1 py-12 text-center rounded-xl md:col-span-1 hover:bg-green-600">Mis Equipos</Link>
-        <Link to="/history" className="bg-main-color2 py-12 text-center rounded-xl md:col-span-1 hover:bg-blue-500">Historial</Link>
-      </div> */}
+      <ul className="container mx-auto flex justify-center flex-wrap gap-3 my-10">
+        {navItems.map((item, index) => (
+          <li key={index}>
+            <Link
+              to={item.to}
+              className={`py-6 px-4 text-center rounded-xl inline-block ${item.color} flex items-center justify-center`}
+              style={{ width: "200px", height: "120px" }}
+            >
+              {item.text}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
