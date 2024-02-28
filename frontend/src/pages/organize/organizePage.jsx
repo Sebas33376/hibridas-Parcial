@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const OrganizePage = () => {
   const profile = useProfile();
 
-  const [formData, setFormData] = useState({
+  const INITIAL_FORM_DATA ={
     name: "",
     sport: "",
     joined: [profile._id],
@@ -24,7 +24,9 @@ const OrganizePage = () => {
     organizer_id: profile._id,
     direction: "",
     state:true
-  });
+  }
+
+  const [formData, setFormData] = useState( INITIAL_FORM_DATA );
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +38,7 @@ const OrganizePage = () => {
       e.preventDefault();
       console.log(formData);
       addTeam({ formData });
-      formData = "";
+      setFormData = (INITIAL_FORM_DATA);
     },
     [formData]
   );
