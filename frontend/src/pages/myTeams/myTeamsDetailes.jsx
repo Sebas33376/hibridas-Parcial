@@ -15,6 +15,11 @@ const MyTeamsDetails = () => {
 
     return team.name !== undefined ? (
         <>
+            <Link to="/MyTeams" className="bg-main-dark inline-block p-3 ml-5 mt-3 rounded-md hover:bg-gray-600">
+                <span >
+                    <IconBack />
+                </span>
+            </Link>
             <div className="relative">
                 <h1 className="font-bold text-4xl absolute top-4 left-4 text-white z-10">
                     {team.name}

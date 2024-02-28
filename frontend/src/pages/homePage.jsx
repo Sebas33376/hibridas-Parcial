@@ -46,13 +46,13 @@ const HomePage = () => {
         </p>
       </div>
 
-      <ul className="container mx-auto flex justify-center flex-wrap gap-3 my-10">
+      <ul className="container mx-auto flex justify-center flex-wrap gap-3 my-10 mb-20">
         {navItems.map((item, index) => (
           <li key={index}>
             <Link
               to={item.to}
               className={`py-6 px-4 text-center rounded-xl inline-block ${item.color} flex items-center justify-center`}
-              style={{ width: "200px", height: "120px" }}
+              style={{ width: "180px", height: "120px" }}
             >
               {item.text}
             </Link>
