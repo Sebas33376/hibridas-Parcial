@@ -22,7 +22,7 @@ async function call({ uri, method = "GET", body = undefined }) {
     return response.json();
   } catch (error) {
     console.error("Error en la solicitud:", error.message);
-    throw error; 
+    throw error;
   }
 }
 
