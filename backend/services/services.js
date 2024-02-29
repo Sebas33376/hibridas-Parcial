@@ -1,19 +1,14 @@
 import { MongoClient, ObjectId } from "mongodb"
 
 const client = new MongoClient("mongodb+srv://josefina:josefina1998@proyecto.jxdpxfn.mongodb.net/");
-
 const db = client.db("Nexosport")
-
 const colectionTeam = db.collection("teams");
 
 async function getTeams(filters) {
-
     const filter = { state: { $ne: false } };
-
     if (filters.section) {
         filter.section = filters.section
     }
-
     return colectionTeam.find(filter).toArray();
 }
 
@@ -42,8 +37,7 @@ async function deletTeam(id) {
 }
 
 async function getHistory(id) {
-
-    return colectionTeam.find({$or: [{organizer_id: id}, {joined: id}]}).toArray();
+    return colectionTeam.find({ $or: [{ organizer_id: id }, { joined: id }] }).toArray();
 }
 
 export {

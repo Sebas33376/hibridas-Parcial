@@ -9,24 +9,24 @@ import { Link } from "react-router-dom";
 const OrganizePage = () => {
   const profile = useProfile();
 
-  const INITIAL_FORM_DATA ={
+  const INITIAL_FORM_DATA = {
     name: "",
     sport: "",
     joined: [profile._id],
     max: "",
     place: "",
     date: "",
-    deadline:"",
+    deadline: "",
     hour: "",
     description: "",
     skills_level: "",
     gender: "",
     organizer_id: profile._id,
     direction: "",
-    state:true
+    state: true
   }
 
-  const [formData, setFormData] = useState( INITIAL_FORM_DATA );
+  const [formData, setFormData] = useState(INITIAL_FORM_DATA);
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +54,6 @@ const OrganizePage = () => {
         <div className="flex justify-between items-center my-2">
           <h1 className="my-2 px-4 font-bold text-xl">Organizar</h1>
         </div>
-
         <form onSubmit={onSubmit} className="space-y-4 p-5">
           <div>
             <label className="block mb-2" htmlFor="nombre">Nombre del equipo:</label>
@@ -65,18 +64,21 @@ const OrganizePage = () => {
               value={formData.name}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
+              autoComplete="name"
               required
+              autoFocus
             />
           </div>
           <div>
             <label className="block mb-2" htmlFor="imagen">Portada:</label>
             <input
-              type="text"
+              type="url"
               name="img"
               id="imagen"
               value={formData.img}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
+              autoComplete="off"
             />
           </div>
           <div>
@@ -113,24 +115,26 @@ const OrganizePage = () => {
           <div>
             <label className="block mb-2" htmlFor="fecha">Fecha del encuentro:</label>
             <input
-              type="text"
+              type="date"
               name="date"
               id="fecha"
               value={formData.date}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
+              autoComplete="off"
               required
             />
           </div>
           <div>
             <label className="block mb-2" htmlFor="hora">Hora:</label>
             <input
-              type="text"
+              type="time"
               name="hour"
               id="hora"
               value={formData.hour}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
+              autoComplete="off"
               required
             />
           </div>
@@ -143,6 +147,7 @@ const OrganizePage = () => {
               value={formData.description}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
+              autoComplete="off"
               required
             />
           </div>
@@ -204,14 +209,14 @@ const OrganizePage = () => {
               value={formData.direction}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
+              autoComplete="street-address"
               required
             />
           </div>
           <div >
             <button
               type="submit"
-              className="w-full bg-main-color1 text-white font-bold py-2 px-4 rounded-md hover:bg-green-600"
-            >
+              className="w-full bg-main-color1 text-white font-bold py-2 px-4 rounded-md hover:bg-green-600">
               Organizar equipo
             </button>
           </div>

@@ -12,5 +12,4 @@ apiRoute.put("/teams/:id", controller.replaceTeam);
 apiRoute.patch("/teams/:id", [validateTeamPatch, validateToken], controller.editTeam);
 apiRoute.delete("/teams/:id", controller.deletTeam);
 
-
 export default apiRoute

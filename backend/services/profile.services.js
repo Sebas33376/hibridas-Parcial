@@ -5,7 +5,6 @@ const client = new MongoClient(
 );
 
 const db = client.db("Nexosport");
-
 const profileCollection = db.collection("profiles");
 
 async function addProfile(account, profile) {
@@ -18,11 +17,9 @@ async function addProfile(account, profile) {
   await client.connect();
 
   const exist = await profileCollection.findOne({ userName: account.userName });
-
   if (exist) {
     throw new Error("Perfil existente");
   }
-
   await profileCollection.insertOne(completeProfile);
 }
 

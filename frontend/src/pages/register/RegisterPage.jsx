@@ -63,7 +63,9 @@ const RegisterPage = () => {
               placeholder="Ingrese su nombre de usuario aqui..."
               value={userName}
               onChange={onCahngeUserName}
+              autoComplete="off"
               required
+              autoFocus
             />
             <label htmlFor="password">Contraseña:</label>
             <input
@@ -74,6 +76,7 @@ const RegisterPage = () => {
               placeholder="Ingrese su contraseña aqui..."
               value={password}
               onChange={onCahngePassword}
+              autoComplete="off"
               required
             />
           </div>

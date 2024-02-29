@@ -28,17 +28,15 @@ export default function MyTeamsPage() {
             <div className="max-w-mx mx-auto mb-20">
                 <div className="flex justify-between items-center my-2">
                     <h1 className="my-2 px-4 font-bold text-xl">Mis equipos</h1>
-                    {/* <span className="mr-4">
-                    <IconFilter />
-                </span> */}
                 </div>
                 <div className="mx-4">
                     <input
-                        type="text"
+                        type="search"
                         placeholder="Buscar"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="w-full px-5 py-1 border rounded-lg my-1"
+                        autoComplete="on"
                     />
                 </div>
                 <List teamsList={filteredTeams} />

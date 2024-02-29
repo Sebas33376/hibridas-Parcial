@@ -47,7 +47,6 @@ const HistoryDetails = () => {
                     loading="lazy"
                     className="w-full h-[308px] object-cover object-center "
                 />
-
                 <div className="w-full h-full bg-black/10 absolute top-0 left-0 backdrop-blur-sm"></div>
             </div>
 

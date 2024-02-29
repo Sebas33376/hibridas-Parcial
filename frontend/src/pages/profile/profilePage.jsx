@@ -54,6 +54,7 @@ export default function ProfilePage() {
               value={editName}
               onChange={(e) => setEditName(e.target.value)}
               className="focus:outline-none border-b border-main-color1 w-full"
+              autoFocus
             />
           ) : (
             <p>{profile?.userName}</p>
@@ -63,7 +64,7 @@ export default function ProfilePage() {
           <h3 className="text-gray-600 text-sm mb-1">Mail: </h3>
           {isEditing ? (
             <input
-              type="text"
+              type="email"
               value={editEmail}
               onChange={(e) => setEditEmail(e.target.value)}
               className="focus:outline-none border-b border-main-color1 w-full"

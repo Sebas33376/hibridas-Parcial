@@ -63,7 +63,9 @@ const LoginPage = () => {
               placeholder="Ingrese su nombre de usuario aqui..."
               onChange={onCahngeUserName}
               value={userName}
+              autoComplete="username"
               required
+              autoFocus
             />
             <label htmlFor="password">Contraseña:</label>
             <input
@@ -74,6 +76,7 @@ const LoginPage = () => {
               placeholder="Ingrese su contraseña aqui..."
               onChange={onCahngePassword}
               value={password}
+              autoComplete="off"
               required
             />
           </div>

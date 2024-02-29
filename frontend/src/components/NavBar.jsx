@@ -49,7 +49,7 @@ const NavBar = () => {
     <AppBar position="static" sx={{ backgroundColor: "#212121", height: "80px" }} className="flex justify-center">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={logo} alt="logo de NEXOSPORT"/>
+          <img src={logo} alt="logo de NEXOSPORT" />
           <Typography
             variant="h5"
             noWrap
