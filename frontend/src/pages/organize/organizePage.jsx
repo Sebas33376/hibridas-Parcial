@@ -26,22 +26,22 @@ const OrganizePage = () => {
     state: true
   }
 
-  const [formData, setFormData] = useState(INITIAL_FORM_DATA);
+  // const [formData, setFormData] = useState(INITIAL_FORM_DATA);
 
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // const onChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
 
-  const onSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-      console.log(formData);
-      addTeam({ formData });
-      setFormData = (INITIAL_FORM_DATA);
-    },
-    [formData]
-  );
+  // const onSubmit = useCallback(
+  //   (e) => {
+  //     e.preventDefault();
+  //     console.log(formData);
+  //     addTeam({ formData });
+  //     setFormData = (INITIAL_FORM_DATA);
+  //   },
+  //   [formData]
+  // );
 
   return (
     <>

@@ -8,7 +8,7 @@ const route = Router();
 
 route.post("/auth", [validateAccount], controllers.addAccount);
 route.post("/auth/login", [validateAccount], controllers.login);
-route.delete("/auth", [validateAccount], controllers.logOut);
+route.delete("/auth", [validateToken], controllers.logOut);
 route.get("/profile", [validateToken], controllers.getProfile);
 route.post("/profile", [validateToken, validateProfile], controllers.addProfile);
 route.patch("/profile", [validateToken], controllers.editProfile);

@@ -25,6 +25,11 @@ function useUser() {
   return user;
 }
 
+function usePassword() {
+  const { password } = useSession();
+  return password;
+}
+
 function SessionProvider({ children }) {
   const [profile, setProfile] = useState({});
   const navigate = useNavigate();
