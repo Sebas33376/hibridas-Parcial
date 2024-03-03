@@ -1,13 +1,18 @@
 async function call({ uri, method = "GET", body = undefined }) {
-
   try {
+    const authToken = localStorage.getItem("token");
+    const headers = {
+      "Content-Type": "application/json",
+    };
+
+    if (authToken) {
+      headers["auth-token"] = authToken;
+    }
+
     const response = await fetch(`http://localhost:2023/api/${uri}`, {
-      headers: {
-        "auth-token": localStorage.getItem("token"),
-        "Content-Type": "application/json"
-      },
+      headers,
       method,
-      body: JSON.stringify(body)
+      body: body ? JSON.stringify(body) : undefined,
     });
 
     if (!response.ok) {
@@ -21,7 +26,7 @@ async function call({ uri, method = "GET", body = undefined }) {
 
     return response.json();
   } catch (error) {
-    console.error("Error en la solicitud:", error.message);
+    console.error(`Error en la solicitud a ${uri}: ${error.message}`, { requestUrl: `http://localhost:2023/api/${uri}`, requestBody: body });
     throw error;
   }
 }

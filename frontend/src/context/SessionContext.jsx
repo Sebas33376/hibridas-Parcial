@@ -34,14 +34,27 @@ function SessionProvider({ children }) {
   const [profile, setProfile] = useState({});
   const navigate = useNavigate();
 
-  const onLogOut = useCallback(() => {
-    logOut();
-    localStorage.removeItem("token");
-    navigate("/login", { replace: true });
+  const onLogOut = useCallback(async () => {
+    try {
+      await logOut();
+      localStorage.removeItem("token");
+      navigate("/login", { replace: true });
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error.message);
+    }
   }, [navigate]);
 
   useEffect(() => {
-    getProfile().then((profile) => setProfile(profile));
+    async function fetchProfile() {
+      try {
+        const fetchedProfile = await getProfile();
+        setProfile(fetchedProfile);
+      } catch (error) {
+        console.error("Error al obtener el perfil:", error.message);
+      }
+    }
+
+    fetchProfile();
   }, []);
 
   const value = useMemo(() => {
