@@ -5,7 +5,7 @@ const client = new MongoClient(
 );
 
 const db = client.db("Nexosport");
-const profileCollection = db.collection("profiles");
+const profileCollection = db.collection("profile");
 
 async function addProfile(account, profile) {
   const completeProfile = {
