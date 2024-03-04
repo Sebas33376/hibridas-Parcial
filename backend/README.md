@@ -1,1 +1,0 @@
-"# Final de Aplicaciones Híbridas"
