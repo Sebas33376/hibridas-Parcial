@@ -1,5 +1,4 @@
 import "./OrganizePage.css";
-import IconFilter from "../../icons/IconFilter";
 import { useCallback, useState } from "react";
 import { addTeam } from "../../services/teams.service";
 import { useProfile } from "../../context/SessionContext";
@@ -36,7 +35,7 @@ const OrganizePage = () => {
       e.preventDefault();
       console.log(formData);
       addTeam({ formData });
-      setFormData(INITIAL_FORM_DATA); 
+      setFormData(INITIAL_FORM_DATA);
     },
     [formData]
   );
@@ -63,6 +62,7 @@ const OrganizePage = () => {
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
               autoComplete="name"
+              placeholder="Ej: Fútbol"
               required
               autoFocus
             />
@@ -77,6 +77,7 @@ const OrganizePage = () => {
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
               autoComplete="street-address"
+              placeholder="Ej: Boedo"
               required
             />
           </div>
@@ -90,6 +91,7 @@ const OrganizePage = () => {
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
               autoComplete="street-address"
+              placeholder="Ej: AV. Boedo 47"
               required
             />
           </div>
@@ -103,6 +105,7 @@ const OrganizePage = () => {
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
               autoComplete="on"
+              placeholder="Ej: 15/05/2024"
               required
             />
           </div>
@@ -116,6 +119,7 @@ const OrganizePage = () => {
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
               autoComplete="on"
+              placeholder="Ej: 12/05/2024"
               required
             />
           </div>
@@ -129,6 +133,7 @@ const OrganizePage = () => {
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
               autoComplete="on"
+              placeholder="Ej: 22:00"
               required
             />
           </div>
@@ -141,6 +146,7 @@ const OrganizePage = () => {
               value={formData.max}
               className="w-full px-4 py-2 border rounded-md"
               autoComplete="on"
+              placeholder="Ej: 10"
               required
             >
               <option value="2">2</option>
@@ -160,12 +166,12 @@ const OrganizePage = () => {
               value={formData.skills_level}
               className="w-full px-4 py-2 border rounded-md"
               autoComplete="on"
+              placeholder="Ej: Intermedio"
               required
             >
               <option value="Principiante">Principiante</option>
               <option value="Intermedio">Intermedio</option>
               <option value="Avanzado">Avanzado</option>
-              <option value="Profesional">Profesional</option>
             </select>
           </div>
           <div>
@@ -177,11 +183,12 @@ const OrganizePage = () => {
               value={formData.gender}
               className="w-full px-4 py-2 border rounded-md"
               autoComplete="on"
+              placeholder="Ej: Mixto"
               required
             >
-              <option value="Hombres">Hombres</option>
-              <option value="Mujeres">Mujeres</option>
               <option value="Mixto">Mixto</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Masculino">Masculino</option>
             </select>
           </div>
           <div >

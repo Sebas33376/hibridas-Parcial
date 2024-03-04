@@ -37,17 +37,13 @@ export default function ProfilePage() {
         <h1 className="my-8 font-bold text-xl">Tú Perfil</h1>
         <div className="mb-4 flex items-start">
           <img
-            src={profile?.avatar}
+            src="../../../public/avatar.png"
             alt="Avatar del usuario"
             className="rounded-full h-24 w-24 object-cover border-4 border-main-color1"
           />
-          <h2 className="ml-4 mt-3 font-bold text-[20px]">
-            {profile?.userName}
-          </h2>
         </div>
-
         <div className="my-6">
-          <h3 className="text-gray-600 text-sm mb-1">Nombre y Apellido: </h3>
+          <h3 className="text-gray-600 text-sm mb-1">Usuario: </h3>
           {isEditing ? (
             <input
               type="text"
@@ -60,7 +56,7 @@ export default function ProfilePage() {
             <p>{profile?.userName}</p>
           )}
         </div>
-        <div>
+        {/* <div>
           <h3 className="text-gray-600 text-sm mb-1">Mail: </h3>
           {isEditing ? (
             <input
@@ -72,7 +68,7 @@ export default function ProfilePage() {
           ) : (
             <p>{profile?.email}</p>
           )}
-        </div>
+        </div> */}
         <div className="my-5">
           {isEditing ? (
             <button
