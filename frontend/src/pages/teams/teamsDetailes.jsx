@@ -5,6 +5,7 @@ import IconUbication from "../../icons/IconUbication";
 import IconCalendar from "../../icons/IconCalendar";
 import IconUbicationDark from "../../icons/IconUbicationDark";
 import IconBack from "../../icons/IconBack";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const TeamsDetails = () => {
   const [team, setTeam] = useState([]);
@@ -66,8 +67,8 @@ const TeamsDetails = () => {
       </div>
     </>
   ) : (
-    <div>
-      <h1>Cargando...</h1>
+    <div className="flex items-center justify-center h-screen">
+      <CircularProgress />
     </div>
   );
 };

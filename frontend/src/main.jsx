@@ -14,6 +14,7 @@ import RegisterPage from "./pages/register/RegisterPage";
 import MyTeamsPage from "./pages/myTeams/myTeamsPage";
 import OrganizePage from "./pages/organize/organizePage";
 import HistoryPage from "./pages/history/historyPage";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const routes = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "Teams",
-        element: <Suspense fallback={<div>Cargando...</div>}><TeamsPage /></Suspense>,
+        element: <Suspense fallback={<div className="flex items-center justify-center h-screen"><CircularProgress /></div>}><TeamsPage /></Suspense>,
       },
       {
         path: "Profile",

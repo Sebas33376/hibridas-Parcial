@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Layout from "./components/Layout";
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function App() {
   const [teams, setTeams] = useState([]);
@@ -31,7 +32,7 @@ export default function App() {
   return (
     <Layout>
       {loading ? (
-        <div>Cargando...</div>
+        <div className="flex items-center justify-center h-screen"><CircularProgress /></div>
       ) : (
         <Outlet />
       )}
