@@ -32,7 +32,7 @@ const RegisterPage = () => {
       register({ userName: userName, password: password })
         .then(({ token }) => {
           localStorage.setItem("token", token);
-          navigate("/", { replace: true });
+          navigate("/Login", { replace: true });
         })
         .catch((err) => setError(err.error));
     },
