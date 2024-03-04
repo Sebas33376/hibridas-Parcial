@@ -52,7 +52,7 @@ const LoginPage = () => {
       <div className="container mx-auto px-4 mt-20 flex flex-col items-center justify-center">
         <form onSubmit={onSubmit}>
           <h1 className="text-3xl my-5 font-bold">¡Bienvenido de vuelta!</h1>
-          <p className="mb-3">Ingrese mail y contraseña para empezar</p>
+          <p className="mb-3">Ingrese su nombre de usuario y su contraseña para empezar</p>
           <div>
             <label htmlFor="userName">Nombre de usuario:</label>
             <input

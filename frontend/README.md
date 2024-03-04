@@ -1,4 +1,4 @@
-"# Final de Aplicaciones Hibridas"
+"# Final de Aplicaciones Híbridas"
 
 # React + Vite
 

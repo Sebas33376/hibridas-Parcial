@@ -1,48 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useProfile } from "../context/SessionContext";
 
 const HomePage = () => {
-  const profile = useProfile();
-
   const navItems = [
     {
       to: "/organize",
-      text: "Organizar",
+      text: "ORGANIZAR EVENTO",
       color: "bg-main-color2 hover:bg-blue-500",
     },
     {
       to: "/teams",
-      text: "Buscar Equipos",
+      text: "BUSCAR DEPORTE",
       color: "bg-main-color1 hover:bg-green-600",
     },
     {
       to: "/myTeams",
-      text: "Mis Equipos",
+      text: "MIS EQUIPOS",
       color: "bg-main-color1 hover:bg-green-600",
     },
     {
       to: "/history",
-      text: "Historial",
+      text: "HISTORIAL",
       color: "bg-main-color2 hover:bg-blue-500",
     },
   ];
 
   return (
     <div>
-      <div className="my-10 container mx-auto px-4">
-        <h1 className="text-2xl">
-          ¡Hola <span className="font-bold">{profile?.userName}</span>!
+      <div className="">
+        <h1 className="text-3xl px-10 py-3">
+          ¡Bienvenido/a a un nuevo espacio recreativo!
         </h1>
-        <p className="py-2">¿Qué deporte querés hacer hoy?</p>
+        <p className="px-10 py-5 text-2xl">¿Qué querés hacer hoy?</p>
+        <img className="w-full h-[350px] object-cover object-center" src="../../public/banner.jpg" alt="banner de NEXOSPORT" />
       </div>
 
-      <div className="bg-main-dark text-white p-6 space-y-3">
-        <h2 className="text-2xl font-bold mx-20">Organizá tu partido</h2>
+      <div className="bg-main-dark text-white p-5 space-y-3">
+        <h2 className="text-2xl font-bold mx-20">Organizá tu evento</h2>
         <p className="mx-20">
-          Creá partidos del deporte que más te guste y elige el lugar,
-          la fecha y la hora. <br /> ¡Animate a ser el director de tus propios
-          eventos deportivos!
+          Creá eventos sobre la disciplina que más te guste y eligí el lugar,
+          la fecha y la hora. <br /> ¡Animate a ser el gestor de tus encuentros deportivos!
         </p>
       </div>
 

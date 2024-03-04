@@ -1,7 +1,7 @@
 {
-  "name": "hibridas-primer-parcial",
+  "name": "aplicaciones-hibridas",
   "version": "1.0.0",
-  "description": "Proyecto para el parcial 1 de hibridas",
+  "description": "Proyecto final de Aplicaciones Híbridas",
   "main": "app/server.js",
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "start": " node app/server.js ",
     "dev": " nodemon app/server.js "
   },
-  "author": "Sebastian Loria, Tomas Friz y Josefina Nocelli",
+  "author": "Tomas Friz",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "3.0.1"

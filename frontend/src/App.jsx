@@ -14,11 +14,9 @@ export default function App() {
             "auth-token": localStorage.getItem("token"),
           },
         });
-
         if (!response.ok) {
           throw new Error(`Error de red: ${response.status} - ${response.statusText}`);
         }
-
         const teamsData = await response.json();
         setTeams(teamsData);
       } catch (error) {
@@ -27,7 +25,6 @@ export default function App() {
         setLoading(false);
       }
     };
-
     fetchTeams();
   }, []);
 

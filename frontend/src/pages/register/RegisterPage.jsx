@@ -52,7 +52,7 @@ const RegisterPage = () => {
       <div className="container mx-auto px-4 mt-20 flex flex-col items-center justify-center">
         <form onSubmit={onSubmit}>
           <h1 className="text-3xl my-5 font-bold">¡Regístrate!</h1>
-          <p className="mb-3">Ingrese mail y contraseña para empezar</p>
+          <p className="mb-3">Registrese con nombre de usuario y contraseña para empezar</p>
           <div className="mb-4">
             <label htmlFor="username">Nombre de usuario:</label>
             <input
@@ -60,7 +60,7 @@ const RegisterPage = () => {
               type="text"
               id="username"
               name="userName"
-              placeholder="Ingrese su nombre de usuario aqui..."
+              placeholder="Minimo 8 caracteres para mayor seguridad..."
               value={userName}
               onChange={onCahngeUserName}
               autoComplete="off"
@@ -73,7 +73,7 @@ const RegisterPage = () => {
               type="password"
               id="password"
               name="password"
-              placeholder="Ingrese su contraseña aqui..."
+              placeholder="Mínimo 8 caracteres para mayor seguridad..."
               value={password}
               onChange={onCahngePassword}
               autoComplete="off"

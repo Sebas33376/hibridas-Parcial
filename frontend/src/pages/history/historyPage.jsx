@@ -1,5 +1,4 @@
 import "./HistoryPage.css";
-import IconFilter from "../../icons/IconFilter";
 import { useEffect, useState } from "react";
 import List from "../../components/historyList";
 import { getTeams } from "../../services/teams.service";
@@ -18,7 +17,7 @@ export default function HistoryPage() {
     }, []);
 
     const filteredTeams = teams.filter((team) =>
-        normalizeString(team.name).includes(normalizeString(searchTerm))
+        normalizeString(team.sport).includes(normalizeString(searchTerm))
     );
 
     return (
@@ -28,21 +27,10 @@ export default function HistoryPage() {
                     <IconBack />
                 </span>
             </Link>
-            <div className="max-w-mx mx-auto mb-20">
-                <div className="flex justify-between items-center my-2">
-                    <h1 className="my-2 px-4 font-bold text-xl">Historial</h1>
+            <div className="mb-20">
+                <div className="flex justify-between items-center">
+                    <h1 className="my-2 px-5 font-bold text-xl">HISTORIAL</h1>
                 </div>
-                <div className="mx-4">
-                    <input
-                        type="search"
-                        placeholder="Buscar"
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full px-5 py-1 border rounded-lg my-1"
-                        autoComplete="on"
-                    />
-                </div>
-
                 <List historyList={filteredTeams} />
             </div>
         </>

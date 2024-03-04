@@ -90,7 +90,7 @@ export default function ProfilePage() {
         <div className="fixed bottom-20 right-4 mx-10 my-5">
           <button
             onClick={onLogOut}
-            className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700"
+            className="bg-main-color2 text-white px-4 py-2 rounded-md hover:bg-blue-500"
           >
             Cerrar sesión
           </button>

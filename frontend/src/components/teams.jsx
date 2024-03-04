@@ -4,19 +4,19 @@ import { PropTypes } from "prop-types";
 import IconUbicationDark from "../icons/IconUbicationDark";
 
 const Teams = ({ teams }) => {
-  const { _id, name, joined, max, place, skills_level, gender, img } = teams;
+  const { _id, sport, joined, max, place, skills_level, gender } = teams;
 
   return (
-    <li className="flex items-center justify-between p-5 border-gray-300 rounded-md my-4 mx-2 shadow-md">
+    <li className="flex items-center justify-between p-5 border-gray-300 rounded-md my-4 mx-5 shadow-md">
       <div className="flex items-center">
         <img
-          src={img}
-          alt=""
+          src="../../public/manos-juntas.jpg"
+          alt="Perfil del evento"
           className="w-20 h-20 object-cover rounded-md mr-4"
           loading="lazy"
         />
         <div>
-          <h2 className="font-bold">{name}</h2>
+          <h2 className="font-bold">{sport}</h2>
           <p className="flex items-center">
             <span className="mr-2">
               <IconUbicationDark />

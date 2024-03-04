@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import List from "../../components/teamsList";
 import { getTeams } from "../../services/teams.service";
-import IconFilter from "../../icons/IconFilter";
 import "./teamsPage.css";
 import IconBack from "../../icons/IconBack";
 import { Link } from "react-router-dom";
@@ -18,7 +17,7 @@ export default function TeamsPage() {
   }, []);
 
   const filteredTeams = teams.filter((team) =>
-    normalizeString(team.name).includes(normalizeString(searchTerm))
+    normalizeString(team.sport).includes(normalizeString(searchTerm))
   );
 
   return (
@@ -28,9 +27,9 @@ export default function TeamsPage() {
           <IconBack />
         </span>
       </Link>
-      <div className="max-w-mx mx-auto mb-20">
-        <div className="flex justify-between items-center my-2">
-          <h1 className="my-2 px-4 font-bold text-xl">Búsqueda</h1>
+      <div className="mb-20">
+        <div className="flex justify-between items-center">
+          <h1 className="my-2 px-4 font-bold text-xl">BUSCAR DEPORTE</h1>
         </div>
         <div className="mx-4">
           <input

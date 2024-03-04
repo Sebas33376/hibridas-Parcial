@@ -1,4 +1,4 @@
-import Teams from "./Teams.jsx";
+import Teams from "./Teams";
 
 const List = ({ teamsList }) => {
   return (

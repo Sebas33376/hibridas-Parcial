@@ -10,7 +10,6 @@ const OrganizePage = () => {
   const profile = useProfile();
 
   const INITIAL_FORM_DATA = {
-    name: "",
     sport: "",
     joined: [profile._id],
     max: "",
@@ -18,7 +17,6 @@ const OrganizePage = () => {
     date: "",
     deadline: "",
     hour: "",
-    description: "",
     skills_level: "",
     gender: "",
     organizer_id: profile._id,
@@ -56,12 +54,12 @@ const OrganizePage = () => {
         </div>
         <form onSubmit={onSubmit} className="space-y-4 p-5">
           <div>
-            <label className="block mb-2" htmlFor="nombre">Nombre del equipo:</label>
+            <label className="block mb-2" htmlFor="deporte">Nombre del deporte:</label>
             <input
               type="text"
-              name="name"
-              id="nombre"
-              value={formData.name}
+              name="sport"
+              id="deporte"
+              value={formData.sport}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
               autoComplete="name"
@@ -70,38 +68,7 @@ const OrganizePage = () => {
             />
           </div>
           <div>
-            <label className="block mb-2" htmlFor="imagen">Portada:</label>
-            <input
-              type="url"
-              name="img"
-              id="imagen"
-              value={formData.img}
-              onChange={onChange}
-              className="w-full px-4 py-2 border rounded-md"
-              autoComplete="off"
-            />
-          </div>
-          <div>
-            <label className="block mb-2" htmlFor="deporte">Deporte:</label>
-            <select
-              name="sport"
-              id="deporte"
-              onChange={onChange}
-              value={formData.sport}
-              className="w-full px-4 py-2 border rounded-md"
-              required
-            >
-              <option value="Beisbol">Beisbol</option>
-              <option value="Basquet">Basquet</option>
-              <option value="Futbol">Futbol</option>
-              <option value="Jockey">Jockey</option>
-              <option value="Rugby">Rugby</option>
-              <option value="Tenis">Tenis</option>
-              <option value="Volley">Volley</option>
-            </select>
-          </div>
-          <div>
-            <label className="block mb-2" htmlFor="localidad">Localidad:</label>
+            <label className="block mb-2" htmlFor="localidad">Localidad del evento:</label>
             <input
               type="text"
               name="place"
@@ -109,11 +76,25 @@ const OrganizePage = () => {
               value={formData.place}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
+              autoComplete="street-address"
               required
             />
           </div>
           <div>
-            <label className="block mb-2" htmlFor="fecha">Fecha del encuentro:</label>
+            <label className="block mb-2" htmlFor="direccion">Dirección del evento:</label>
+            <input
+              type="text"
+              name="direction"
+              id="direccion"
+              value={formData.direction}
+              onChange={onChange}
+              className="w-full px-4 py-2 border rounded-md"
+              autoComplete="street-address"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="fecha">Fecha del evento:</label>
             <input
               type="date"
               name="date"
@@ -121,12 +102,25 @@ const OrganizePage = () => {
               value={formData.date}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
-              autoComplete="off"
+              autoComplete="on"
               required
             />
           </div>
           <div>
-            <label className="block mb-2" htmlFor="hora">Hora:</label>
+            <label className="block mb-2" htmlFor="limite">Fecha límite de inscripción del evento:</label>
+            <input
+              type="date"
+              name="deadline"
+              id="limite"
+              value={formData.deadline}
+              onChange={onChange}
+              className="w-full px-4 py-2 border rounded-md"
+              autoComplete="on"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2" htmlFor="hora">Hora del evento:</label>
             <input
               type="time"
               name="hour"
@@ -134,20 +128,7 @@ const OrganizePage = () => {
               value={formData.hour}
               onChange={onChange}
               className="w-full px-4 py-2 border rounded-md"
-              autoComplete="off"
-              required
-            />
-          </div>
-          <div>
-            <label className="block mb-2" htmlFor="descripcion">Descripción:</label>
-            <input
-              type="text"
-              name="description"
-              id="descripcion"
-              value={formData.description}
-              onChange={onChange}
-              className="w-full px-4 py-2 border rounded-md"
-              autoComplete="off"
+              autoComplete="on"
               required
             />
           </div>
@@ -159,6 +140,7 @@ const OrganizePage = () => {
               onChange={onChange}
               value={formData.max}
               className="w-full px-4 py-2 border rounded-md"
+              autoComplete="on"
               required
             >
               <option value="2">2</option>
@@ -177,6 +159,7 @@ const OrganizePage = () => {
               onChange={onChange}
               value={formData.skills_level}
               className="w-full px-4 py-2 border rounded-md"
+              autoComplete="on"
               required
             >
               <option value="Principiante">Principiante</option>
@@ -186,32 +169,20 @@ const OrganizePage = () => {
             </select>
           </div>
           <div>
-            <label className="block mb-2" htmlFor="genero">Genero de jugadores:</label>
+            <label className="block mb-2" htmlFor="genero">Género de los jugadores:</label>
             <select
               name="gender"
               id="genero"
               onChange={onChange}
               value={formData.gender}
               className="w-full px-4 py-2 border rounded-md"
+              autoComplete="on"
               required
             >
               <option value="Hombres">Hombres</option>
               <option value="Mujeres">Mujeres</option>
               <option value="Mixto">Mixto</option>
             </select>
-          </div>
-          <div>
-            <label className="block mb-2" htmlFor="direccion">Dirección del punto de encuentro:</label>
-            <input
-              type="text"
-              name="direction"
-              id="direccion"
-              value={formData.direction}
-              onChange={onChange}
-              className="w-full px-4 py-2 border rounded-md"
-              autoComplete="street-address"
-              required
-            />
           </div>
           <div >
             <button

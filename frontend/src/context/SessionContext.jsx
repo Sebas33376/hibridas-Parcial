@@ -36,7 +36,7 @@ function SessionProvider({ children }) {
 
   const onLogOut = useCallback(async () => {
     try {
-      await logOut();
+      await logOut(useUser, usePassword);
       localStorage.removeItem("token");
       navigate("/login", { replace: true });
     } catch (error) {
