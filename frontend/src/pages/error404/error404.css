@@ -1,0 +1,22 @@
+.error-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.titulo {
+    font-size: 5em;
+    margin-bottom: 20px;
+    color: #40B1D5;
+    /* Rojo */
+}
+
+.texto {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.imagen {
+    max-width: 100%;
+    height: auto;
+}
