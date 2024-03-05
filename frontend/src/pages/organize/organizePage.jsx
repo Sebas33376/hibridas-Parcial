@@ -1,4 +1,3 @@
-import "./OrganizePage.css";
 import { useCallback, useState } from "react";
 import { addTeam } from "../../services/teams.service";
 import { useProfile } from "../../context/SessionContext";
@@ -10,7 +9,7 @@ const OrganizePage = () => {
 
   const INITIAL_FORM_DATA = {
     sport: "",
-    joined: [profile._id],
+    joined: [], 
     max: "",
     place: "",
     date: "",
@@ -18,10 +17,10 @@ const OrganizePage = () => {
     hour: "",
     skills_level: "",
     gender: "",
-    organizer_id: profile._id,
+    organizer_id: profile && profile._id, 
     direction: "",
-    state: true
-  }
+    state: true,
+  };
 
   const [formData, setFormData] = useState(INITIAL_FORM_DATA);
 
@@ -31,15 +30,24 @@ const OrganizePage = () => {
   };
 
   const onSubmit = useCallback(
-    (e) => {
+    async (e) => {
       e.preventDefault();
       console.log(formData);
-      addTeam({ formData });
-      setFormData(INITIAL_FORM_DATA);
+  
+      try {
+        if (formData) {
+          await addTeam(formData);
+          setFormData(INITIAL_FORM_DATA);
+        } else {
+          console.error("Error al enviar el formulario: formData es undefined");
+        }
+      } catch (error) {
+        console.error("Error al enviar el formulario:", error);
+      }
     },
     [formData]
   );
-
+  
   return (
     <>
       <Link to="/" className="bg-main-dark inline-block p-3 ml-5 mt-3 rounded-md hover:bg-gray-600">

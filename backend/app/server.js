@@ -7,6 +7,7 @@ import apiSportsRoute from "../api/routes/api.route.sports.js";
 import cors from "cors";
 
 const app = express();
+const PORT = process.env.PORT || 2023;
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -16,11 +17,14 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   }
 });
+
 const upload = multer({ storage });
+
 app.post("/upload", upload.single("uploaded_file"), function (req, res, next) {
   console.log(req.file, req.body);
-  res.send("ok")
+  res.send("ok");
 });
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -30,4 +34,21 @@ app.use("/api", apiRouteAuth);
 app.use("/api", apiHistoryRoute);
 app.use("/api", apiSportsRoute);
 
-app.listen(2023);
+// Maneja los errores global
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Error interno del servidor');
+});
+
+// Maneja específico para conexión rechazada
+app.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`El puerto ${PORT} está en uso.`);
+  } else {
+    console.error(err);
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
+});

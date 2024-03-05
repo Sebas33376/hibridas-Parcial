@@ -8,46 +8,55 @@ function getTeamsById(id) {
   return call({ uri: `teams/${id}` });
 }
 
-function addTeam({ formData }) {
-  console.log(formData);
-  const {
-    name,
-    sport,
-    joined,
-    max,
-    place,
-    date,
-    deadline,
-    hour,
-    description,
-    skills_level,
-    gender,
-    organizer_id,
-    direction,
-    state
-  } = formData;
+async function addTeam(formData) {
+  try {
+    if (!formData) {
+      throw new Error("formData is undefined");
+    }
 
-  return call({
-    uri: "teams",
-    method: "POST",
-    body: {
-      name: name,
-      sport: sport,
-      joined: joined,
-      max: max,
-      place: place,
-      date: date,
-      deadline: deadline,
-      hour: hour,
-      description: description,
-      skills_level: skills_level,
-      gender: gender,
-      organizer_id: organizer_id,
-      direction: direction,
-      state: state
+    console.log(formData);
 
-    },
-  });
+    const {
+      name,
+      sport,
+      joined,
+      max,
+      place,
+      date,
+      deadline,
+      hour,
+      description,
+      skills_level,
+      gender,
+      organizer_id,
+      direction,
+      state
+    } = formData;
+
+    return await call({
+      uri: "teams",
+      method: "POST",
+      body: {
+        name,
+        sport,
+        joined,
+        max,
+        place,
+        date,
+        deadline,
+        hour,
+        description,
+        skills_level,
+        gender,
+        organizer_id,
+        direction,
+        state
+      },
+    });
+  } catch (error) {
+    console.error("Error al agregar equipo:", error);
+    throw error;
+  }
 }
 
 export { getTeams, addTeam, getTeamsById };

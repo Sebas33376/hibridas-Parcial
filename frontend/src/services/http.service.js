@@ -1,18 +1,18 @@
 async function call({ uri, method = "GET", body = undefined }) {
   try {
     const authToken = localStorage.getItem("token");
-    const headers = {
+    const headers = new Headers({
       "Content-Type": "application/json",
-    };
+    });
 
     if (authToken) {
-      headers["auth-token"] = authToken;
+      headers.append("auth-token", authToken);
     }
 
     const response = await fetch(`http://localhost:2023/api/${uri}`, {
       headers,
       method,
-      body: body ? JSON.stringify(body) : undefined,
+      body: body && JSON.stringify(body),
     });
 
     if (!response.ok) {
@@ -22,6 +22,8 @@ async function call({ uri, method = "GET", body = undefined }) {
     if (response.status === 401) {
       localStorage.removeItem("token");
       throw new Error("No autorizado: Token inválido o caducado");
+    } else if (response.status === 404) {
+      throw new Error("Recurso no encontrado");
     }
 
     return response.json();
