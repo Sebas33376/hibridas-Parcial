@@ -6,7 +6,7 @@ const getTeams = (req, res) => {
   service
     .getTeams(filter)
     .then((teams) => res.status(200).json(teams))
-    .catch((err) => res.status(404).json({ error: "Error al obtener equipos", details: err.message }));
+    .catch((err) => res.status(404).json({ err }));
 };
 
 const getTeamById = (req, res) => {
@@ -14,23 +14,23 @@ const getTeamById = (req, res) => {
   service
     .getTeamById(id)
     .then((team) => res.status(200).json(team))
-    .catch((err) => res.status(404).json({ error: "Error al obtener equipo por ID", details: err.message }));
+    .catch((err) => res.status(404).json({ err }));
 };
 
 const addTeam = (req, res) => {
   service
     .createTeam(req.body)
     .then((newTeam) => res.status(201).json(newTeam))
-    .catch((err) => res.status(500).json({ error: "Error al agregar equipo", details: err.message }));
+    .catch((err) => res.status(500).json({ err }));
 };
 
 const replaceTeam = (req, res) => {
   const id = req.params.id;
 
   service
-    .replaceTeam(id, req.body)
+    .replaceTeam(id, team)
     .then((teamReplaced) => res.status(201).json(teamReplaced))
-    .catch((err) => res.status(500).json({ error: "Error al reemplazar equipo", details: err.message }));
+    .catch((err) => res.status(500).json({ err }));
 };
 
 const editTeam = (req, res) => {
@@ -40,16 +40,16 @@ const editTeam = (req, res) => {
   service
     .editTeam(id, team)
     .then((newTeam) => res.status(201).json(newTeam))
-    .catch((err) => res.status(500).json({ error: "Error al editar equipo", details: err.message }));
+    .catch((err) => res.status(500).json({ err }));
 };
 
-const deleteTeam = (req, res) => {
+const deletTeam = (req, res) => {
   const id = req.params.id;
 
   service
-    .deleteTeam(id)
-    .then((team) => res.status(204).json(team))
-    .catch((err) => res.status(500).json({ error: "Error al eliminar equipo", details: err.message }));
+    .deletTeam(id)
+    .then((team) => res.status(202).json(team))
+    .catch((err) => res.status(204).json({ err }));
 };
 
 const getHistory = (req, res) => {
@@ -57,8 +57,8 @@ const getHistory = (req, res) => {
 
   service
     .getHistory(id)
-    .then((myTeams) => res.status(200).json(myTeams))
-    .catch((err) => res.status(500).json({ error: "Error al obtener historial del equipo", details: err.message }));
+    .then((myTeams) => res.status(202).json(myTeams))
+    .catch((err) => res.status(204).json({ err }));
 };
 
 export {
@@ -67,6 +67,6 @@ export {
   addTeam,
   editTeam,
   replaceTeam,
-  deleteTeam,
+  deletTeam,
   getHistory
 };
